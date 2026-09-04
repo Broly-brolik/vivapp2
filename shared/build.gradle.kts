@@ -53,6 +53,9 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation("org.jetbrains.androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+            implementation("qrkit:qrkit:1.0.4")
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
