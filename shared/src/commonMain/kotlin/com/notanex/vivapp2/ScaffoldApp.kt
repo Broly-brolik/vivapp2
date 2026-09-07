@@ -13,9 +13,8 @@ import com.notanex.vivapp2.viewmodels.InventoryViewModel
 @Composable
 fun ScaffoldApp() {
     val viewModel = InventoryViewModel()
-    viewModel.loadInventory("products.csv")
+    viewModel.loadInventory("viva_inventory.csv")
 
-    // Observe the StateFlow's current list of products
     val products = viewModel.products.collectAsState()
 
     Scaffold { innerPadding ->
