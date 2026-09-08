@@ -13,19 +13,27 @@ import com.notanex.vivapp2.viewmodels.InventoryViewModel
 @Composable
 fun ScaffoldApp() {
     val viewModel = InventoryViewModel()
-    viewModel.loadInventory("viva_inventory.csv")
+    viewModel.loadInventory("products.json")
 
     val products = viewModel.products.collectAsState()
+    val loadError = viewModel.loadError.collectAsState()
 
     Scaffold { innerPadding ->
         Column(
             modifier = Modifier.fillMaxSize(),
         ) {
-            for (product in products.value) {
+            if (loadError.value != null) {
                 Text(
                     modifier = Modifier.padding(innerPadding),
-                    text = "${product.sapNumber} · ${product.groupProducts} · ${product.packaging}",
+                    text = "${loadError.value}",
                 )
+            } else {
+                for (product in products.value) {
+                    Text(
+                        modifier = Modifier.padding(innerPadding),
+                        text = "${product.sapNumber} · ${product.name} · ${product.packaging}",
+                    )
+                }
             }
         }
     }
