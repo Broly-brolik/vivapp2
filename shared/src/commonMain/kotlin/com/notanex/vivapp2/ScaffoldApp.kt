@@ -92,13 +92,13 @@ fun ScaffoldApp() {
                 composable<ScanRoute> {
                     ScanScreen(
                         onScanResult = { code ->
-                            val product = viewModel.findProduct(code)          // add this to InventoryViewModel
-                            if (product != null) {
-                                scannedItemsViewModel.addScan(product, 1)      // revive un-commented
-                                navController.popBackStack()                   // back to Landing / summary later
-                            } else {
-                                // "Unknown code" — keep scanner open or show error; don't silently swallow
-                            }
+//                            val product = viewModel.findProduct(code)          // add this to InventoryViewModel
+//                            if (product != null) {
+//                                scannedItemsViewModel.addScan(product, 1)      // revive un-commented
+//                                navController.popBackStack()                   // back to Landing / summary later
+//                            } else {
+//                                // "Unknown code" — keep scanner open or show error; don't silently swallow
+//                            }
                         },
                         onCancel = { navController.popBackStack() },
                     )
