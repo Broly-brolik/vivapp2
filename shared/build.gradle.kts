@@ -58,6 +58,7 @@ kotlin {
             implementation(libs.navigation.compose)
             implementation(libs.materialIconsCore)
             implementation(libs.materialIconsExtended)
+            implementation(libs.qrkit)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

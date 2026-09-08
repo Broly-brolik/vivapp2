@@ -25,6 +25,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.notanex.vivapp2.screens.LandingScreen
 import com.notanex.vivapp2.screens.ProductsScreen
+import com.notanex.vivapp2.screens.ScanScreen
 import com.notanex.vivapp2.viewmodels.InventoryViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -86,6 +87,20 @@ fun ScaffoldApp() {
                     ProductsScreen(
                         products = products,
                         loadError = loadError
+                    )
+                }
+                composable<ScanRoute> {
+                    ScanScreen(
+                        onScanResult = { code ->
+                            val product = viewModel.findProduct(code)          // add this to InventoryViewModel
+                            if (product != null) {
+                                scannedItemsViewModel.addScan(product, 1)      // revive un-commented
+                                navController.popBackStack()                   // back to Landing / summary later
+                            } else {
+                                // "Unknown code" — keep scanner open or show error; don't silently swallow
+                            }
+                        },
+                        onCancel = { navController.popBackStack() },
                     )
                 }
             }

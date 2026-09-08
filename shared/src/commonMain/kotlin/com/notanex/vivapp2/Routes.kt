@@ -6,3 +6,6 @@ import kotlinx.serialization.Serializable
 data object LandingRoute
 @Serializable
 data object ProductsRoute
+
+@Serializable
+data object ScanRoute
