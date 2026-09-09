@@ -12,8 +12,6 @@ class MyScanApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         INSTANCE = this
-
-        // Initialize your Android AppContext holder here if needed
         AppContext.set(applicationContext)
     }
 }

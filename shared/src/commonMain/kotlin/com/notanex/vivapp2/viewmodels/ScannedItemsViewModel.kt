@@ -1,4 +1,7 @@
 package com.notanex.vivapp2.viewmodels
+
+import androidx.lifecycle.ViewModel
+
 //
 //import androidx.lifecycle.ViewModel
 //import androidx.lifecycle.viewModelScope
@@ -11,7 +14,7 @@ package com.notanex.vivapp2.viewmodels
 //import java.time.LocalDateTime
 //import java.time.format.DateTimeFormatter
 //
-//class ScannedItemsViewModel : ViewModel() {
+class ScannedItemsViewModel : ViewModel() {
 //
 //    private val _scannedItems = MutableStateFlow<List<ScannedItem>>(emptyList())
 //    val scannedItems: StateFlow<List<ScannedItem>> = _scannedItems.asStateFlow()
@@ -97,4 +100,4 @@ package com.notanex.vivapp2.viewmodels
 //    }
 //
 //    private fun quote(s: String) = "\"${s.replace("\"", "\"\"")}\""
-//}
+}

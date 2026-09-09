@@ -1,6 +1,9 @@
 package com.notanex.vivapp2.screens
 
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import qrscanner.CameraLens
 import qrscanner.QrScanner
@@ -10,14 +13,24 @@ fun ScanScreen(
     onScanResult: (String) -> Unit,
     onCancel: () -> Unit,
 ) {
+    val rememberedOnScan = remember(onScanResult) { onScanResult }
+    val rememberedOnCancel = remember(onCancel) { onCancel }
+
     QrScanner(
-        modifier = Modifier,
+        modifier = Modifier.fillMaxSize(),
         flashlightOn = false,
         cameraLens = CameraLens.Back,
         openImagePicker = false,
-        onCompletion = { code -> onScanResult(code) },
+        onCompletion = { code ->
+            println("DEBUG: Scan captured -> $code")
+            rememberedOnScan(code)
+        },
         imagePickerHandler = { },
-        onFailure = { error -> /* surface error via ScanUiState.errorMessage */ },
-        permissionDeniedView = { onCancel() }, // iOS permission denied → treat as cancel
+        onFailure = { error ->
+            println("DEBUG: Scan Error -> $error")
+        },
+        permissionDeniedView = {
+            LaunchedEffect(Unit) { rememberedOnCancel() }
+        },
     )
 }

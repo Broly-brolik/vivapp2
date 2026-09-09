@@ -23,15 +23,19 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.notanex.vivapp2.models.ScannedItem
 import com.notanex.vivapp2.screens.LandingScreen
 import com.notanex.vivapp2.screens.ProductsScreen
 import com.notanex.vivapp2.screens.ScanScreen
 import com.notanex.vivapp2.viewmodels.InventoryViewModel
+import com.notanex.vivapp2.viewmodels.ScannedItemsViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ScaffoldApp() {
     val viewModel = remember { InventoryViewModel() }
+
+    val scannedItemsViewModel = remember { ScannedItemsViewModel() }
 
     LaunchedEffect(Unit) {
         viewModel.loadInventory("products.json")
@@ -91,14 +95,13 @@ fun ScaffoldApp() {
                 }
                 composable<ScanRoute> {
                     ScanScreen(
-                        onScanResult = { code ->
-//                            val product = viewModel.findProduct(code)          // add this to InventoryViewModel
-//                            if (product != null) {
-//                                scannedItemsViewModel.addScan(product, 1)      // revive un-commented
-//                                navController.popBackStack()                   // back to Landing / summary later
-//                            } else {
-//                                // "Unknown code" — keep scanner open or show error; don't silently swallow
-//                            }
+                        onScanResult = { rawCode ->
+                            viewModel.onScanResult(rawCode)
+                            val product = viewModel.findProduct(rawCode)
+                            if (product != null) {
+                                // scannedItemsViewModel.addScan(product, 1) // reviving later
+                                navController.popBackStack()
+                            }
                         },
                         onCancel = { navController.popBackStack() },
                     )
