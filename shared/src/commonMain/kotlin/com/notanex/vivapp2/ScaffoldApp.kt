@@ -18,6 +18,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
@@ -31,6 +32,8 @@ import com.notanex.vivapp2.screens.ProductsScreen
 import com.notanex.vivapp2.screens.ScanScreen
 import com.notanex.vivapp2.viewmodels.InventoryViewModel
 import com.notanex.vivapp2.viewmodels.ScannedItemsViewModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -96,11 +99,14 @@ fun ScaffoldApp() {
                     )
                 }
                 composable<ScanRoute> {
+                    val scope = rememberCoroutineScope()
                     ScanScreen(
                         onScanResult = { rawCode ->
-                            val product = viewModel.findProductByQr(rawCode)
-                            if (product != null) {
-                                navController.navigate(ConfirmItemRoute(product.sapNumber))
+                            scope.launch(Dispatchers.Main) {
+                                val product = viewModel.findProductByQr(rawCode)
+                                if (product != null) {
+                                    navController.navigate(ConfirmItemRoute(product.sapNumber))
+                                }
                             }
                         },
                         onCancel = { navController.popBackStack() },
