@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.List
-import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -17,13 +16,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.notanex.vivapp2.models.ScannedItem
+import androidx.navigation.toRoute
+import com.notanex.vivapp2.screens.ItemConfirmationScreen
 import com.notanex.vivapp2.screens.LandingScreen
 import com.notanex.vivapp2.screens.ProductsScreen
 import com.notanex.vivapp2.screens.ScanScreen
@@ -96,15 +98,36 @@ fun ScaffoldApp() {
                 composable<ScanRoute> {
                     ScanScreen(
                         onScanResult = { rawCode ->
-                            viewModel.onScanResult(rawCode)
-                            val product = viewModel.findProduct(rawCode)
+                            val product = viewModel.findProductByQr(rawCode)
                             if (product != null) {
-                                // scannedItemsViewModel.addScan(product, 1) // reviving later
-                                navController.popBackStack()
+                                navController.navigate(ConfirmItemRoute(product.sapNumber))
                             }
                         },
                         onCancel = { navController.popBackStack() },
                     )
+                }
+                composable<ConfirmItemRoute> { backStackEntry ->
+                    val route: ConfirmItemRoute = backStackEntry.toRoute()
+                    val product = products.find { it.sapNumber == route.sapNumber }
+                    var quantity by remember { mutableStateOf(1) }
+                    if (product != null) {
+                        ItemConfirmationScreen(
+                            product = product,
+                            quantity = quantity,
+                            onIncrement = { quantity++ },
+                            onDecrement = { if (quantity > 1) quantity-- },
+                            onConfirm = {
+                                scannedItemsViewModel.addScan(product, quantity)
+                                navController.popBackStack(LandingRoute, inclusive = false)
+                            },
+                            onCancel = { navController.popBackStack() }
+                        )
+                    } else {
+                        LaunchedEffect(Unit) {
+                            navController.popBackStack()
+                        }
+                    }
+
                 }
             }
         }

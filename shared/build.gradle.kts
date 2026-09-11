@@ -59,6 +59,7 @@ kotlin {
             implementation(libs.materialIconsCore)
             implementation(libs.materialIconsExtended)
             implementation(libs.qrkit)
+            implementation(libs.dateTime)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

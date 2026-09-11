@@ -28,25 +28,19 @@ class InventoryViewModel(
         }
     }
 
-    fun findProduct(sapNumber: String): Products? = _products.value.firstOrNull() { it.sapNumber == sapNumber }
-
-    fun onScanResult(rawCode: String) {
-        println("DEBUG: QR Code Raw Data -> '$rawCode'")
-        val sap = parseSapFromRaw(rawCode)
-        val product = products.value.firstOrNull() { it.sapNumber == sap}
-    }
-
-    private fun parseSapFromRaw(raw: String): String {
-        return raw.trim()
-    }
-
-
-    private fun findItemByQrCode(qrCode: String): Products? {
+    private fun extractSapFromQr(qrCode: String): String? {
         val regex = Regex("MAT(\\d{8})")
-        val matchResult = regex.find(qrCode)
-        val sapNumber = matchResult?.groupValues?.get(1)
-        return _products.value[sapNumber?.toInt() ?: -1]
+        return regex.find(qrCode)?.groupValues?.get(1)?.let {
+            it.take(4) + "." + it.drop(4)
+        }
     }
+
+    fun findProductByQr(qrCode: String): Products? {
+        val sap = extractSapFromQr(qrCode) ?: return null
+        return _products.value.find { it.sapNumber == sap }
+    }
+
+
 
 //    private fun parseCsvLines(lines: List<String>): List<Products> {
 //        if (lines.isEmpty()) return emptyList()

@@ -22,7 +22,6 @@ fun ScanScreen(
         cameraLens = CameraLens.Back,
         openImagePicker = false,
         onCompletion = { code ->
-            println("DEBUG: Scan captured -> $code")
             rememberedOnScan(code)
         },
         imagePickerHandler = { },
