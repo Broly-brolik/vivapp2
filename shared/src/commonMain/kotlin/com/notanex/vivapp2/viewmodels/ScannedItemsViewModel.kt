@@ -72,15 +72,15 @@ class ScannedItemsViewModel : ViewModel() {
         }
     }
 
-//    fun buildCsvSummary(): String {
-//        val now = Clock.now().toLocalDateTime(TimeZone.currentSystemDefault())
-//        val header = listOf("GeneratedAt", "SAP Number", "GroupProducts", "Quantity").joinToString(",")
-//        val rows = _scannedItems.value.joinToString("\n") { item ->
-//            listOf(now.toString(), quote(item.sapNumber), quote(item.category), item.quantity.toString())
-//                .joinToString(",")
-//        }
-//        return "$header\n$rows"
-//    }
+/*    fun buildCsvSummary(): String {
+        val now = Clock.now().toLocalDateTime(TimeZone.currentSystemDefault())
+        val header = listOf("GeneratedAt", "SAP Number", "GroupProducts", "Quantity").joinToString(",")
+        val rows = _scannedItems.value.joinToString("\n") { item ->
+            listOf(now.toString(), quote(item.sapNumber), quote(item.category), item.quantity.toString())
+                .joinToString(",")
+        }
+        return "$header\n$rows"
+    }*/
 
     private fun quote(s: String) = "\"${s.replace("\"", "\"\"")}\""
 }

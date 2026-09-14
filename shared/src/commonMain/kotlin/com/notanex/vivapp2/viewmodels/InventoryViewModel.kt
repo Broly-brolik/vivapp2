@@ -39,31 +39,4 @@ class InventoryViewModel(
         val sap = extractSapFromQr(qrCode) ?: return null
         return _products.value.find { it.sapNumber == sap }
     }
-
-
-
-//    private fun parseCsvLines(lines: List<String>): List<Products> {
-//        if (lines.isEmpty()) return emptyList()
-//
-//        val dataLines = if (lines.first().contains("sapNumber", ignoreCase = true)) {
-//            lines.drop(1)
-//        } else {
-//            lines
-//        }
-//
-//        return dataLines.mapNotNull { line ->
-//            val columns = line.split(",").map { it.trim() }
-//
-//            if (columns.size >= 4) {
-//                Products(
-//                    sapNumber = columns[0],
-//                    groupProducts = columns[1],
-//                    packaging = columns[2],
-//                    adjustment = columns[3].toInt(),
-//                )
-//            } else {
-//                null // Skip malformed rows
-//            }
-//        }
-//    }
 }

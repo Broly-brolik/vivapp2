@@ -16,7 +16,6 @@ fun ScanScreen(
     onScanResult: (String) -> Unit,
     onCancel: () -> Unit,
 ) {
-    // 1. Add a guard state
     var isProcessing by remember { mutableStateOf(false) }
 
     val rememberedOnScan = remember(onScanResult) { onScanResult }

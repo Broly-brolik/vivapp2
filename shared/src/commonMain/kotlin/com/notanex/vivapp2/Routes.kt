@@ -13,3 +13,6 @@ data object ScanRoute
 
 @Serializable
 data class ConfirmItemRoute(val sapNumber: String)
+
+@Serializable
+data object SummaryRoute
