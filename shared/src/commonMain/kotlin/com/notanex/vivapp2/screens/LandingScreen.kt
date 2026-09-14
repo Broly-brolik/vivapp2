@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -46,16 +47,17 @@ private val ScreenBackground = Color(0xFFFFFFFF)
 fun LandingScreen(
     onOpenProducts: () -> Unit,
     onStartScan: () -> Unit,
+    contentPadding: PaddingValues,
 ) {
     Column(
         modifier = Modifier
             .fillMaxSize()
+            .padding(contentPadding)
             .background(ScreenBackground)
             .padding(horizontal = 24.dp, vertical = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(48.dp))
-        // 2. Header Text
         Text(
             text = "Scan QR code",
             style = MaterialTheme.typography.titleLarge.copy(

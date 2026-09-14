@@ -77,25 +77,23 @@ fun ScaffoldApp() {
             )
         }
     ) { innerPadding ->
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-        ) {
             NavHost(
                 navController = navController,
-                startDestination = LandingRoute
+                startDestination = LandingRoute,
+                modifier = Modifier.fillMaxSize()
             ) {
                 composable<LandingRoute> {
                     LandingScreen(
                         onOpenProducts = { navController.navigate(ProductsRoute) },
                         onStartScan = { navController.navigate(ScanRoute) },
+                        contentPadding = innerPadding,
                     )
                 }
                 composable<ProductsRoute> {
                     ProductsScreen(
                         products = products,
-                        loadError = loadError
+                        loadError = loadError,
+                        contentPadding = innerPadding,
                     )
                 }
                 composable<ScanRoute> {
@@ -138,4 +136,3 @@ fun ScaffoldApp() {
             }
         }
     }
-}
