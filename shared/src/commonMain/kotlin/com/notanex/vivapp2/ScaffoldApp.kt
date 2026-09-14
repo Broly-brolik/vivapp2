@@ -172,7 +172,7 @@ fun ScaffoldApp() {
                         onRemove = {sap -> scannedItemsViewModel.removeItem(sap) },
                         onClearAll = { scannedItemsViewModel.clearAll() },
                         onSendEmail = {
-/*                            val csvContent = scannedItemsViewModel.buildCsvSummary()
+                            val csvContent = scannedItemsViewModel.buildCsvSummary()
 
                             sendEmailWithAttachment(
                                 subject = "Scanned Inventory - ${scannedItems.size} items",
@@ -181,7 +181,7 @@ fun ScaffoldApp() {
                                     fileName = "inventory_summary.csv",
                                     content = csvContent
                                 )
-                            )*/
+                            )
                         },
                         contentPadding = innerPadding
                     )

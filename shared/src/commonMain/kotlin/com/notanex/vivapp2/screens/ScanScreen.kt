@@ -16,8 +16,6 @@ fun ScanScreen(
     onScanResult: (String) -> Unit,
     onCancel: () -> Unit,
 ) {
-    var isProcessing by remember { mutableStateOf(false) }
-
     val rememberedOnScan = remember(onScanResult) { onScanResult }
     val rememberedOnCancel = remember(onCancel) { onCancel }
 
@@ -27,10 +25,7 @@ fun ScanScreen(
         cameraLens = CameraLens.Back,
         openImagePicker = false,
         onCompletion = { code ->
-            if (!isProcessing) {
-                isProcessing = true
-                rememberedOnScan(code)
-            }
+            rememberedOnScan(code)
         },
         imagePickerHandler = { },
         onFailure = { error ->

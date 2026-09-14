@@ -8,6 +8,10 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 
 class ScannedItemsViewModel : ViewModel() {
 
@@ -72,15 +76,20 @@ class ScannedItemsViewModel : ViewModel() {
         }
     }
 
-/*    fun buildCsvSummary(): String {
-        val now = Clock.now().toLocalDateTime(TimeZone.currentSystemDefault())
-        val header = listOf("GeneratedAt", "SAP Number", "GroupProducts", "Quantity").joinToString(",")
+    @OptIn(ExperimentalTime::class)
+    fun buildCsvSummary(): String {
+        val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+        val header = listOf("GeneratedAt", "SAP Number", "Category", "Quantity").joinToString(",")
         val rows = _scannedItems.value.joinToString("\n") { item ->
-            listOf(now.toString(), quote(item.sapNumber), quote(item.category), item.quantity.toString())
-                .joinToString(",")
+            listOf(
+                now.toString(),
+                quote(item.sapNumber),
+                quote(item.category),
+                item.quantity.toString()
+            ).joinToString(",")
         }
         return "$header\n$rows"
-    }*/
+    }
 
     private fun quote(s: String) = "\"${s.replace("\"", "\"\"")}\""
 }
