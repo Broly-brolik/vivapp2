@@ -176,7 +176,7 @@ fun ScaffoldApp() {
 
                             sendEmailWithAttachment(
                                 subject = "Scanned Inventory - ${scannedItems.size} items",
-                                body = "Attached is the CSV summary of the current scanning session.",
+                                body = "CSV summary of the current session.",
                                 attachment = EmailAttachment(
                                     fileName = "inventory_summary.csv",
                                     content = csvContent
