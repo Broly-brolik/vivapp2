@@ -1,0 +1,7 @@
+<resources>
+    <string name="label_category">Catégorie</string>
+    <string name="label_sap">SAP</string>
+    <string name="label_unit">Unité</string>
+    <string name="label_packaging">Emballage</string>
+    <string name="summary_title">Résumé</string>
+</resources>
