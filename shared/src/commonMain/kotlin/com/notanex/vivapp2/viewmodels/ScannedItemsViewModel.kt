@@ -9,7 +9,6 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlin.time.Clock
-import kotlin.time.ExperimentalTime
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.toLocalDateTime
 
@@ -30,6 +29,7 @@ class ScannedItemsViewModel : ViewModel() {
                 current.add(
                     ScannedItem(
                         sapNumber = product.sapNumber,
+                        name = product.name,
                         category = product.category,
                         packaging = product.packaging,
                         quantity = quantity
@@ -76,7 +76,6 @@ class ScannedItemsViewModel : ViewModel() {
         }
     }
 
-    @OptIn(ExperimentalTime::class)
     fun buildCsvSummary(): String {
         val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
         val header = listOf("GeneratedAt", "SAP Number", "Category", "Quantity").joinToString(",")

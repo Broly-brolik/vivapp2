@@ -59,7 +59,7 @@ fun SummaryScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Scanning History",
+                        text = "Summary",
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold
                     )
@@ -71,7 +71,7 @@ fun SummaryScreen(
 
                 if (scannedItems.isEmpty()) {
                     Box(modifier = Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
-                        Text("No items scanned yet", color = Color.Gray)
+                        Text("No items yet", color = Color.Gray)
                     }
                 } else {
                     LazyColumn(
@@ -111,8 +111,8 @@ private fun ScannedItemRowCard(
             verticalAlignment = Alignment.CenterVertically
         ) {
             Column(modifier = Modifier.weight(1f)) {
-                Text(text = item.category, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
-                Text(text = "SAP: ${item.sapNumber}", style = MaterialTheme.typography.bodySmall)
+                Text(text = item.name, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+                Text(text = "Category: ${item.category}", style = MaterialTheme.typography.bodySmall)
             }
 
             Row(verticalAlignment = Alignment.CenterVertically) {

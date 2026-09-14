@@ -6,7 +6,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.List
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.QrCodeScanner
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -22,6 +26,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -29,6 +34,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.notanex.vivapp2.logic.EmailAttachment
 import com.notanex.vivapp2.logic.sendEmailWithAttachment
+import com.notanex.vivapp2.models.AppLanguage
 import com.notanex.vivapp2.screens.ItemConfirmationScreen
 import com.notanex.vivapp2.screens.LandingScreen
 import com.notanex.vivapp2.screens.ProductsScreen
@@ -43,11 +49,13 @@ import kotlinx.coroutines.launch
 @Composable
 fun ScaffoldApp() {
     val viewModel = remember { InventoryViewModel() }
+    val currentLanguage by viewModel.currentLanguage.collectAsState()
+    var showLanguageMenu by remember { mutableStateOf(false) }
 
     val scannedItemsViewModel = remember { ScannedItemsViewModel() }
 
     LaunchedEffect(Unit) {
-        viewModel.loadInventory("products.json")
+        viewModel.loadInventory("products_fr.json")
     }
 
     val products by viewModel.products.collectAsState()
@@ -81,6 +89,30 @@ fun ScaffoldApp() {
                     }
                 },
                 actions = {
+                    Box {
+                        IconButton(onClick = { showLanguageMenu = true }) {
+                            Icon(Icons.Default.Language, contentDescription = "Change Language")
+                        }
+                        DropdownMenu(
+                            expanded = showLanguageMenu,
+                            onDismissRequest = { showLanguageMenu = false }
+                        ) {
+                            AppLanguage.entries.forEach { lang ->
+                                DropdownMenuItem(
+                                    text = { Text(lang.label) },
+                                    onClick = {
+                                        viewModel.setLanguage(lang)
+                                        showLanguageMenu = false
+                                    },
+                                    leadingIcon = {
+                                        if (currentLanguage == lang) {
+                                            Icon(Icons.Default.Check, contentDescription = null)
+                                        }
+                                    }
+                                )
+                            }
+                        }
+                    }
                     if (isSummaryScreen || isLandingScreen) {
                         IconButton(onClick = { navController.navigate(ScanRoute) }) {
                             Icon(Icons.Default.QrCodeScanner, contentDescription = "Scan another")
@@ -175,7 +207,7 @@ fun ScaffoldApp() {
                             val csvContent = scannedItemsViewModel.buildCsvSummary()
 
                             sendEmailWithAttachment(
-                                subject = "Scanned Inventory - ${scannedItems.size} items",
+                                subject = "Scanned ${scannedItems.size} items",
                                 body = "CSV summary of the current session.",
                                 attachment = EmailAttachment(
                                     fileName = "inventory_summary.csv",

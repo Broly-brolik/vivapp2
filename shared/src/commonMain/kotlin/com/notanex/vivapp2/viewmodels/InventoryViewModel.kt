@@ -3,6 +3,7 @@ package com.notanex.vivapp2.viewmodels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.notanex.vivapp2.data.InventoryDataSource
+import com.notanex.vivapp2.models.AppLanguage
 import com.notanex.vivapp2.models.Products
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -16,6 +17,14 @@ class InventoryViewModel(
     val products: StateFlow<List<Products>> = _products.asStateFlow()
     private val _loadError = MutableStateFlow<String?>(null)
     val loadError: StateFlow<String?> = _loadError.asStateFlow()
+
+    private val _currentLanguage = MutableStateFlow(AppLanguage.FRENCH)
+    val currentLanguage = _currentLanguage.asStateFlow()
+
+    fun setLanguage(language: AppLanguage) {
+        _currentLanguage.value = language
+        loadInventory(language.fileName) // Reload the correct JSON
+    }
     fun loadInventory(fileName: String) {
         viewModelScope.launch {
             try {

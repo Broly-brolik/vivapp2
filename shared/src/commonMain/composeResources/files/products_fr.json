@@ -6,7 +6,7 @@
     "minOrderQty": 1,
     "unit": "roul",
     "packaging": "Rouleau de 100 étiquettes",
-    "netPrice": 1.45,
+    "netPrice": 2.3,
     "billingUnit": "rouleau",
     "weightKg": 0.08,
     "maxOrderQty": 10
@@ -18,7 +18,7 @@
     "minOrderQty": 1,
     "unit": "roul",
     "packaging": "Rouleau de 100 étiquettes",
-    "netPrice": 1.45,
+    "netPrice": 2.05,
     "billingUnit": "rouleau",
     "weightKg": 0.08,
     "maxOrderQty": 10
@@ -30,7 +30,7 @@
     "minOrderQty": 1,
     "unit": "roul",
     "packaging": "Rouleau de 100 étiquettes",
-    "netPrice": 1.6,
+    "netPrice": 2.8,
     "billingUnit": "rouleau",
     "weightKg": 0.08,
     "maxOrderQty": 10
@@ -54,7 +54,7 @@
     "minOrderQty": 1,
     "unit": "roul",
     "packaging": "6 rouleaux de 300 m x 45 cm",
-    "netPrice": 12.4,
+    "netPrice": 12.1,
     "billingUnit": "rouleau",
     "weightKg": 1.63,
     "maxOrderQty": 24
@@ -78,7 +78,7 @@
     "minOrderQty": 500,
     "unit": "pce",
     "packaging": "carton à 5 x 100 pièces",
-    "netPrice": 0.06,
+    "netPrice": 0.07,
     "billingUnit": "pièce",
     "weightKg": 0.004,
     "maxOrderQty": 5000
@@ -105,28 +105,28 @@
     "netPrice": 0.02,
     "billingUnit": "pièce",
     "weightKg": 0.004,
-    "maxOrderQty": 15000
+    "maxOrderQty": 16000
   },
   {
     "sapNumber": "2545.4906",
-    "name": "Assiette - 23 cm ",
+    "name": "Assiette - 23 cm",
     "category": "Articles non alimentaires (Livraison contre facturation)",
-    "minOrderQty": 100,
+    "minOrderQty": 50,
     "unit": "pce",
-    "packaging": "6 paquets de 100 pièces",
-    "netPrice": 0.1,
+    "packaging": "10 paquets de 50 pièces",
+    "netPrice": 0.08,
     "billingUnit": "pièce",
     "weightKg": 0.009,
     "maxOrderQty": 3000
   },
   {
     "sapNumber": "2545.4919",
-    "name": "Bol à soupe - 3 dl ",
+    "name": "Bol à soupe - 3 dl",
     "category": "Articles non alimentaires (Livraison contre facturation)",
-    "minOrderQty": 100,
+    "minOrderQty": 50,
     "unit": "pce",
-    "packaging": "6 paquets de 100 pièces",
-    "netPrice": 0.08,
+    "packaging": "20 paquets de 100 pièces",
+    "netPrice": 0.07,
     "billingUnit": "pièce",
     "weightKg": 0.004,
     "maxOrderQty": 3000
@@ -150,7 +150,7 @@
     "minOrderQty": 100,
     "unit": "pce",
     "packaging": "10 paquets de 100 pièces",
-    "netPrice": 0.03,
+    "netPrice": 0.02,
     "billingUnit": "pièce",
     "weightKg": 0.002,
     "maxOrderQty": 2000
@@ -181,24 +181,24 @@
   },
   {
     "sapNumber": "2545.4921",
-    "name": "Gobelet isotherme - 1.8 dl ",
+    "name": "Gobelet isotherme - 1.8 dl",
     "category": "Articles non alimentaires (Livraison contre facturation)",
     "minOrderQty": 50,
     "unit": "pce",
-    "packaging": "20 paquets de 50 pièces",
-    "netPrice": 0.07,
+    "packaging": "40 paquets de 50 pièces",
+    "netPrice": 0.04,
     "billingUnit": "pièce",
     "weightKg": 0.005,
     "maxOrderQty": 3000
   },
   {
     "sapNumber": "2545.4922",
-    "name": "Gobelet isotherme - 3 dl ",
+    "name": "Gobelet isotherme - 3 dl",
     "category": "Articles non alimentaires (Livraison contre facturation)",
     "minOrderQty": 50,
     "unit": "pce",
     "packaging": "20 paquets de 50 pièces",
-    "netPrice": 0.08,
+    "netPrice": 0.05,
     "billingUnit": "pièce",
     "weightKg": 0.005,
     "maxOrderQty": 3000
@@ -210,7 +210,7 @@
     "minOrderQty": 1,
     "unit": "roul",
     "packaging": "1 rouleau de 100 m x 120 cm",
-    "netPrice": 20.0,
+    "netPrice": 21.1,
     "billingUnit": "rouleau",
     "weightKg": 6.25,
     "maxOrderQty": 12
@@ -222,19 +222,19 @@
     "minOrderQty": 100,
     "unit": "port",
     "packaging": "Carton de 100 portions à 32 g",
-    "netPrice": 0.22,
+    "netPrice": 0.28,
     "billingUnit": "portion",
     "weightKg": 0.035,
     "maxOrderQty": 1000
   },
   {
     "sapNumber": "2582.5659",
-    "name": "Boisson au malt en portion",
+    "name": "Boisson au cacao et malt en portion",
     "category": "Boissons",
-    "minOrderQty": 50,
+    "minOrderQty": 100,
     "unit": "port",
-    "packaging": "Carton de 50 portion à 28 g",
-    "netPrice": 0.22,
+    "packaging": "Carton de 100 portion à 28 g",
+    "netPrice": 0.28,
     "billingUnit": "portion",
     "weightKg": 0.032,
     "maxOrderQty": 1000
@@ -246,7 +246,7 @@
     "minOrderQty": 100,
     "unit": "port",
     "packaging": "Carton de 100 portions à 42 g",
-    "netPrice": 0.55,
+    "netPrice": 0.54,
     "billingUnit": "portion",
     "weightKg": 0.045,
     "maxOrderQty": 1000
@@ -258,7 +258,7 @@
     "minOrderQty": 100,
     "unit": "port",
     "packaging": "Carton de 100 portions à 2 g",
-    "netPrice": 0.22,
+    "netPrice": 0.17,
     "billingUnit": "portion",
     "weightKg": 0.003,
     "maxOrderQty": 1000
@@ -270,7 +270,7 @@
     "minOrderQty": 100,
     "unit": "port",
     "packaging": "Carton de 100 portions à 17 g",
-    "netPrice": 0.22,
+    "netPrice": 0.19,
     "billingUnit": "portion",
     "weightKg": 0.019,
     "maxOrderQty": 1000
@@ -351,13 +351,13 @@
     "sapNumber": "2582.9887",
     "name": "Condiment en poudre pour viande",
     "category": "Produits auxiliaires",
-    "minOrderQty": 4,
+    "minOrderQty": 6,
     "unit": "bte",
-    "packaging": "4 boîtes de 1.100 kg",
-    "netPrice": 5.9,
+    "packaging": "6 boîtes de 1.100 kg",
+    "netPrice": 5.25,
     "billingUnit": "boîte",
     "weightKg": 1.3,
-    "maxOrderQty": 20
+    "maxOrderQty": 30
   },
   {
     "sapNumber": "2119.3884",
@@ -366,7 +366,7 @@
     "minOrderQty": 12,
     "unit": "bte",
     "packaging": "12 boîtes de 870 g",
-    "netPrice": 2.5,
+    "netPrice": 2.05,
     "billingUnit": "boîte",
     "weightKg": 0.9,
     "maxOrderQty": 120
@@ -390,7 +390,7 @@
     "minOrderQty": 12,
     "unit": "bou",
     "packaging": "12 bouteilles de 500 g",
-    "netPrice": 1.65,
+    "netPrice": 1.8,
     "billingUnit": "bouteille",
     "weightKg": 0.56,
     "maxOrderQty": 120
@@ -414,7 +414,7 @@
     "minOrderQty": 1,
     "unit": "bid",
     "packaging": "Bidon de 4.500 kg",
-    "netPrice": 14.95,
+    "netPrice": 14.65,
     "billingUnit": "bidon",
     "weightKg": 5.0,
     "maxOrderQty": 10
@@ -426,7 +426,7 @@
     "minOrderQty": 1,
     "unit": "bid",
     "packaging": "Bidon de 3.000 kg",
-    "netPrice": 18.05,
+    "netPrice": 18.5,
     "billingUnit": "bidon",
     "weightKg": 3.1,
     "maxOrderQty": 20
@@ -450,7 +450,7 @@
     "minOrderQty": 3,
     "unit": "sach",
     "packaging": "3 sachets de 1.500 kg",
-    "netPrice": 7.45,
+    "netPrice": 7.8,
     "billingUnit": "sachet",
     "weightKg": 1.55,
     "maxOrderQty": 30
@@ -474,14 +474,14 @@
     "minOrderQty": 6,
     "unit": "bou",
     "packaging": "6 bouteilles de 2 l",
-    "netPrice": 4.0,
+    "netPrice": 4.4,
     "billingUnit": "bouteille",
     "weightKg": 2.1,
     "maxOrderQty": 30
   },
   {
     "sapNumber": "2119.3867",
-    "name": "Sauce de rôti liée",
+    "name": "Sauce de base brune",
     "category": "Produits auxiliaires",
     "minOrderQty": 6,
     "unit": "bte",
@@ -498,7 +498,7 @@
     "minOrderQty": 10,
     "unit": "paq",
     "packaging": "10 paquets de 1.000 kg",
-    "netPrice": 0.88,
+    "netPrice": 0.92,
     "billingUnit": "paquet",
     "weightKg": 1.03,
     "maxOrderQty": 100
@@ -510,7 +510,7 @@
     "minOrderQty": 10,
     "unit": "sach",
     "packaging": "10 sachets de 1.000 kg",
-    "netPrice": 1.1,
+    "netPrice": 1.0,
     "billingUnit": "sachets",
     "weightKg": 1.01,
     "maxOrderQty": 500
@@ -522,7 +522,7 @@
     "minOrderQty": 15,
     "unit": "kg",
     "packaging": "1 vrac de 15 kg",
-    "netPrice": 1.1,
+    "netPrice": 1.0,
     "billingUnit": "kg",
     "weightKg": 1.01,
     "maxOrderQty": 510
@@ -534,7 +534,7 @@
     "minOrderQty": 1,
     "unit": "paq",
     "packaging": "1 paquet à 100 bâtonnets de 5 g",
-    "netPrice": 2.15,
+    "netPrice": 1.75,
     "billingUnit": "paquet",
     "weightKg": 0.55,
     "maxOrderQty": 30
@@ -546,22 +546,22 @@
     "minOrderQty": 6,
     "unit": "bte",
     "packaging": "6 boîtes de 2.500 kg",
-    "netPrice": 3.9,
+    "netPrice": 2.95,
     "billingUnit": "boîte",
     "weightKg": 2.8,
     "maxOrderQty": 60
   },
   {
-    "sapNumber": "2557.0174",
+    "sapNumber": "2704.4756",
     "name": "Velouté blanc",
     "category": "Produits auxiliaires",
-    "minOrderQty": 2,
-    "unit": "sach",
-    "packaging": "2 sachets de 4.000 kg",
-    "netPrice": 15.35,
-    "billingUnit": "sachet",
-    "weightKg": 4.2,
-    "maxOrderQty": 20
+    "minOrderQty": 6,
+    "unit": "bte",
+    "packaging": "nouveau 6 boîtes de 1.000 kg (10l/bte)",
+    "netPrice": 3.95,
+    "billingUnit": "boîte",
+    "weightKg": 1.1,
+    "maxOrderQty": 30
   },
   {
     "sapNumber": "2582.9888",
@@ -594,7 +594,7 @@
     "minOrderQty": 120,
     "unit": "port",
     "packaging": "Carton de 120 portions à 25 g",
-    "netPrice": 0.13,
+    "netPrice": 0.26,
     "billingUnit": "portion",
     "weightKg": 0.028,
     "maxOrderQty": 2400
@@ -606,7 +606,7 @@
     "minOrderQty": 120,
     "unit": "port",
     "packaging": "Carton de 120 portions à 25 g",
-    "netPrice": 0.22,
+    "netPrice": 0.35,
     "billingUnit": "portion",
     "weightKg": 0.028,
     "maxOrderQty": 2400
@@ -649,24 +649,24 @@
   },
   {
     "sapNumber": "2582.5022",
-    "name": "Emincé de soja (boulette)",
+    "name": "Végé Emincé",
     "category": "Protéines",
-    "minOrderQty": 6,
+    "minOrderQty": 3,
     "unit": "paq",
-    "packaging": "6 paquets de 0.750 kg ",
-    "netPrice": 7.2,
+    "packaging": "3 paquets de 1.000 kg",
+    "netPrice": 10.85,
     "billingUnit": "paquet",
-    "weightKg": 0.9,
+    "weightKg": 1.1,
     "maxOrderQty": 42
   },
   {
     "sapNumber": "2582.5021",
-    "name": "Haché de soja",
+    "name": "Végé Haché",
     "category": "Protéines",
-    "minOrderQty": 6,
+    "minOrderQty": 3,
     "unit": "paq",
-    "packaging": "6 paquets de 1.000 kg ",
-    "netPrice": 9.1,
+    "packaging": "3 paquets de 1.000 kg",
+    "netPrice": 10.85,
     "billingUnit": "paquet",
     "weightKg": 1.1,
     "maxOrderQty": 30
@@ -678,7 +678,7 @@
     "minOrderQty": 4,
     "unit": "sach",
     "packaging": "4 sachets de 3.000 kg",
-    "netPrice": 21.55,
+    "netPrice": 19.0,
     "billingUnit": "sachet",
     "weightKg": 3.1,
     "maxOrderQty": 80
@@ -690,7 +690,7 @@
     "minOrderQty": 8,
     "unit": "pce",
     "packaging": "8 pièces de 500 g",
-    "netPrice": 3.5,
+    "netPrice": 3.9,
     "billingUnit": "pièce",
     "weightKg": 0.55,
     "maxOrderQty": 80
@@ -702,7 +702,7 @@
     "minOrderQty": 8,
     "unit": "pce",
     "packaging": "8 pièces de 500 g",
-    "netPrice": 3.5,
+    "netPrice": 3.55,
     "billingUnit": "pièce",
     "weightKg": 0.55,
     "maxOrderQty": 80
@@ -714,7 +714,7 @@
     "minOrderQty": 10,
     "unit": "kg",
     "packaging": "Carton de 10.000 kg",
-    "netPrice": 2.49,
+    "netPrice": 2.3,
     "billingUnit": "kg",
     "weightKg": 1.1,
     "maxOrderQty": 200
@@ -726,7 +726,7 @@
     "minOrderQty": 10,
     "unit": "kg",
     "packaging": "Carton de 10.000 kg",
-    "netPrice": 2.53,
+    "netPrice": 2.17,
     "billingUnit": "kg",
     "weightKg": 1.1,
     "maxOrderQty": 200
@@ -738,7 +738,7 @@
     "minOrderQty": 1,
     "unit": "sac",
     "packaging": "Sac de 5.000 kg",
-    "netPrice": 9.25,
+    "netPrice": 8.75,
     "billingUnit": "sac",
     "weightKg": 5.05,
     "maxOrderQty": 10
@@ -762,7 +762,7 @@
     "minOrderQty": 10,
     "unit": "kg",
     "packaging": "Carton de 10.000 kg",
-    "netPrice": 2.53,
+    "netPrice": 2.98,
     "billingUnit": "kg",
     "weightKg": 1.1,
     "maxOrderQty": 200
@@ -774,7 +774,7 @@
     "minOrderQty": 6,
     "unit": "bte",
     "packaging": "6 boîtes de 1.770 kg égoutté",
-    "netPrice": 3.65,
+    "netPrice": 4.15,
     "billingUnit": "boîte",
     "weightKg": 1.9,
     "maxOrderQty": 60
@@ -792,13 +792,25 @@
     "maxOrderQty": 50
   },
   {
+    "sapNumber": "2704.6383",
+    "name": "Riz basmati",
+    "category": "Hydrates de carbone",
+    "minOrderQty": 5,
+    "unit": "kg",
+    "packaging": "Sac de 5.000 kg",
+    "netPrice": 2.8,
+    "billingUnit": "kg",
+    "weightKg": 1.01,
+    "maxOrderQty": 200
+  },
+  {
     "sapNumber": "2582.9893",
     "name": "Riz pour risotto parboiled",
     "category": "Hydrates de carbone",
     "minOrderQty": 5,
     "unit": "kg",
     "packaging": "Sac de 5.000 kg",
-    "netPrice": 1.4,
+    "netPrice": 1.48,
     "billingUnit": "kg",
     "weightKg": 1.01,
     "maxOrderQty": 200
@@ -834,7 +846,7 @@
     "minOrderQty": 6,
     "unit": "sach",
     "packaging": "6 paquets de 1.000 kg",
-    "netPrice": 1.45,
+    "netPrice": 1.5,
     "billingUnit": "sachet",
     "weightKg": 1.1,
     "maxOrderQty": 60
@@ -845,20 +857,32 @@
     "category": "Hydrates de carbone",
     "minOrderQty": 10,
     "unit": "kg",
-    "packaging": "Carton de 10.000 kg",
-    "netPrice": 1.75,
+    "packaging": "Carton de 2 paquets de 5.000 kg",
+    "netPrice": 2.04,
     "billingUnit": "kg",
     "weightKg": 1.1,
     "maxOrderQty": 200
   },
   {
     "sapNumber": "2584.5262",
-    "name": "Spirales complète ",
+    "name": "Spirales complète",
     "category": "Hydrates de carbone",
     "minOrderQty": 10,
     "unit": "kg",
     "packaging": "Carton de 10.000 kg",
-    "netPrice": 2.62,
+    "netPrice": 2.67,
+    "billingUnit": "kg",
+    "weightKg": 1.1,
+    "maxOrderQty": 200
+  },
+  {
+    "sapNumber": "2704.8733",
+    "name": "Tagliatelles 6mm",
+    "category": "Hydrates de carbone",
+    "minOrderQty": 5,
+    "unit": "kg",
+    "packaging": "Carton de 5.000 kg",
+    "netPrice": 3.07,
     "billingUnit": "kg",
     "weightKg": 1.1,
     "maxOrderQty": 200
@@ -870,7 +894,7 @@
     "minOrderQty": 6,
     "unit": "bte",
     "packaging": "6 boîtes de 1.790 kg égoutté",
-    "netPrice": 6.1,
+    "netPrice": 6.4,
     "billingUnit": "boîte",
     "weightKg": 2.1,
     "maxOrderQty": 60
@@ -882,7 +906,7 @@
     "minOrderQty": 120,
     "unit": "port",
     "packaging": "Carton de 120 portions à 100 g",
-    "netPrice": 0.28,
+    "netPrice": 0.3,
     "billingUnit": "portion",
     "weightKg": 0.12,
     "maxOrderQty": 1200
@@ -894,7 +918,7 @@
     "minOrderQty": 6,
     "unit": "bte",
     "packaging": "6 boîtes de 1.850 kg égoutté",
-    "netPrice": 7.1,
+    "netPrice": 7.4,
     "billingUnit": "boîte",
     "weightKg": 2.1,
     "maxOrderQty": 60
@@ -906,7 +930,7 @@
     "minOrderQty": 6,
     "unit": "bte",
     "packaging": "6 boîtes de 1.800 kg égoutté",
-    "netPrice": 9.8,
+    "netPrice": 9.45,
     "billingUnit": "boîte",
     "weightKg": 2.1,
     "maxOrderQty": 60
@@ -918,7 +942,7 @@
     "minOrderQty": 6,
     "unit": "bte",
     "packaging": "6 boîtes de 1.900 kg égoutté",
-    "netPrice": 5.4,
+    "netPrice": 5.7,
     "billingUnit": "boîte",
     "weightKg": 2.1,
     "maxOrderQty": 60
@@ -938,11 +962,11 @@
   {
     "sapNumber": "2119.3820",
     "name": "Conserve de viande",
-    "category": "Composantes pour la subsistance individuelle ",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 50,
     "unit": "pce",
     "packaging": "50 conserves de 75 g",
-    "netPrice": 0.66,
+    "netPrice": 0.73,
     "billingUnit": "pièce",
     "weightKg": 0.09,
     "maxOrderQty": 1000
@@ -950,23 +974,23 @@
   {
     "sapNumber": "2584.0760",
     "name": "Crème sandwich au poulet",
-    "category": "Composantes pour la subsistance individuelle ",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 50,
     "unit": "tube",
     "packaging": "50 tubes de 50 g",
-    "netPrice": 0.82,
+    "netPrice": 0.94,
     "billingUnit": "tube",
     "weightKg": 0.055,
     "maxOrderQty": 1000
   },
   {
     "sapNumber": "2702.4706",
-    "name": "Pate à tartiner mediterranée (végane)",
-    "category": "Composantes pour la subsistance individuelle ",
-    "minOrderQty": 48,
+    "name": "Pate à tartiner mediterranée",
+    "category": "Composantes pour la subsistance individuelle",
+    "minOrderQty": 24,
     "unit": "St",
-    "packaging": "48 Tuben à 100 g",
-    "netPrice": 1.15,
+    "packaging": "24 Tuben à 100 g",
+    "netPrice": 1.0,
     "billingUnit": "tube",
     "weightKg": 0.115,
     "maxOrderQty": 480
@@ -974,7 +998,7 @@
   {
     "sapNumber": "2119.3825",
     "name": "Chili con carne",
-    "category": "Composantes pour la subsistance individuelle ",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 24,
     "unit": "bte",
     "packaging": "24 boîtes de 400 g",
@@ -986,19 +1010,19 @@
   {
     "sapNumber": "2119.3831",
     "name": "Ravioli",
-    "category": "Composantes pour la subsistance individuelle ",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 12,
     "unit": "bte",
     "packaging": "12 boîtes de 1.170 kg",
-    "netPrice": 3.1,
+    "netPrice": 3.25,
     "billingUnit": "boîte",
     "weightKg": 1.25,
     "maxOrderQty": 240
   },
   {
     "sapNumber": "2582.3632",
-    "name": "Ration spéciale petit-déjeuner (assortis)",
-    "category": "Composantes pour la subsistance individuelle ",
+    "name": "Mets terrain doux",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 40,
     "unit": "port",
     "packaging": "Carton de 40 portions",
@@ -1009,24 +1033,24 @@
   },
   {
     "sapNumber": "2582.3633",
-    "name": "Ration spéciale repas principal (assortis)",
-    "category": "Composantes pour la subsistance individuelle ",
+    "name": "Mets terrain salé",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 40,
     "unit": "port",
     "packaging": "Carton de 40 portions",
-    "netPrice": 2.0,
+    "netPrice": 2.2,
     "billingUnit": "portion",
     "weightKg": 0.155,
     "maxOrderQty": 960
   },
   {
     "sapNumber": "2701.4131",
-    "name": "Ration spéciale repas principal végétarien",
-    "category": "Composantes pour la subsistance individuelle ",
+    "name": "Mets terrain salé végétarien",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 40,
     "unit": "port",
     "packaging": "Carton de 2 variantes à 20 sachets",
-    "netPrice": 2.0,
+    "netPrice": 2.2,
     "billingUnit": "portion",
     "weightKg": 0.155,
     "maxOrderQty": 960
@@ -1034,11 +1058,11 @@
   {
     "sapNumber": "2577.8698",
     "name": "Crème dessert chocolat en portions",
-    "category": "Composantes pour la subsistance individuelle ",
+    "category": "Composantes pour la subsistance individuelle",
     "minOrderQty": 48,
     "unit": "bte",
     "packaging": "48 boîtes de 210 g",
-    "netPrice": 1.45,
+    "netPrice": 1.5,
     "billingUnit": "boîte",
     "weightKg": 0.225,
     "maxOrderQty": 960
@@ -1062,7 +1086,7 @@
     "minOrderQty": 100,
     "unit": "pce",
     "packaging": "100 pièces de 20 g",
-    "netPrice": 0.16,
+    "netPrice": 0.17,
     "billingUnit": "pièce",
     "weightKg": 0.025,
     "maxOrderQty": 2000
@@ -1074,14 +1098,14 @@
     "minOrderQty": 100,
     "unit": "pce",
     "packaging": "100 pièces de 20 g (4 arômes)",
-    "netPrice": 0.18,
+    "netPrice": 0.21,
     "billingUnit": "pièce",
     "weightKg": 0.025,
     "maxOrderQty": 4000
   },
   {
     "sapNumber": "2585.3341",
-    "name": "Biscuit militaire 50gr",
+    "name": "Biscuit militaire",
     "category": "Snacks",
     "minOrderQty": 72,
     "unit": "paq",
@@ -1090,6 +1114,18 @@
     "billingUnit": "pièce",
     "weightKg": 0.055,
     "maxOrderQty": 1440
+  },
+  {
+    "sapNumber": "2705.4750",
+    "name": "Bonbon aux herbes (Ricola)",
+    "category": "Snacks",
+    "minOrderQty": 200,
+    "unit": "sach",
+    "packaging": "200 sachets à 5 g (2 bonbons)",
+    "netPrice": 0.1,
+    "billingUnit": "sachet",
+    "weightKg": 0.007,
+    "maxOrderQty": 2000
   },
   {
     "sapNumber": "2521.4338",
@@ -1109,11 +1145,23 @@
     "category": "Snacks",
     "minOrderQty": 48,
     "unit": "pce",
-    "packaging": "48 pièces de 50 g ",
-    "netPrice": 0.35,
+    "packaging": "48 pièces de 50 g",
+    "netPrice": 0.45,
     "billingUnit": "pièce",
     "weightKg": 0.055,
     "maxOrderQty": 2400
+  },
+  {
+    "sapNumber": "2703.5398",
+    "name": "Chocoly (Double biscuit fourré au chocolat)",
+    "category": "Snacks",
+    "minOrderQty": 60,
+    "unit": "pce",
+    "packaging": "60 paquets de 62 g",
+    "netPrice": 0.75,
+    "billingUnit": "pièce",
+    "weightKg": 0.07,
+    "maxOrderQty": 1200
   },
   {
     "sapNumber": "2567.5158",
@@ -1128,6 +1176,30 @@
     "maxOrderQty": 2000
   },
   {
+    "sapNumber": "2704.4084",
+    "name": "Energy Bar Double Chocolate Chip",
+    "category": "Snacks",
+    "minOrderQty": 100,
+    "unit": "paq",
+    "packaging": "100 paquets de 28 g",
+    "netPrice": 0.38,
+    "billingUnit": "paquet",
+    "weightKg": 0.033,
+    "maxOrderQty": 2000
+  },
+  {
+    "sapNumber": "2704.4083",
+    "name": "High Protein Bar Chocolate-Raspberry",
+    "category": "Snacks",
+    "minOrderQty": 60,
+    "unit": "paq",
+    "packaging": "60 paquets de 35 g",
+    "netPrice": 0.58,
+    "billingUnit": "paquet",
+    "weightKg": 0.04,
+    "maxOrderQty": 1200
+  },
+  {
     "sapNumber": "2527.5246",
     "name": "Gomme à mâcher dentaire à la menthe",
     "category": "Snacks",
@@ -1140,16 +1212,28 @@
     "maxOrderQty": 8000
   },
   {
+    "sapNumber": "2703.5397",
+    "name": "Gaufrette du jura à la crème au cacao",
+    "category": "Snacks",
+    "minOrderQty": 56,
+    "unit": "pce",
+    "packaging": "56 paquets de 37 g",
+    "netPrice": 0.7,
+    "billingUnit": "pièce",
+    "weightKg": 0.04,
+    "maxOrderQty": 1120
+  },
+  {
     "sapNumber": "2524.5717",
     "name": "Leckerli",
     "category": "Snacks",
-    "minOrderQty": 50,
+    "minOrderQty": 60,
     "unit": "paq",
-    "packaging": "50 paquets de 35 g",
-    "netPrice": 0.56,
+    "packaging": "60 paquets de 30 g",
+    "netPrice": 0.4,
     "billingUnit": "paquet",
     "weightKg": 0.055,
-    "maxOrderQty": 1000
+    "maxOrderQty": 1200
   },
   {
     "sapNumber": "2583.0106",
@@ -1174,18 +1258,6 @@
     "billingUnit": "paquet",
     "weightKg": 0.056,
     "maxOrderQty": 2000
-  },
-  {
-    "sapNumber": "2577.8694",
-    "name": "Snack au salami (volaille)",
-    "category": "Snacks",
-    "minOrderQty": 100,
-    "unit": "pce",
-    "packaging": "100 pièces de 50 g",
-    "netPrice": 1.16,
-    "billingUnit": "pièce",
-    "weightKg": 0.055,
-    "maxOrderQty": 1000
   },
   {
     "sapNumber": "2524.5714",
