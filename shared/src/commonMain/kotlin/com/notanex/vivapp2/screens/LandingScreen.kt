@@ -69,18 +69,15 @@ fun LandingScreen(
 
         Spacer(modifier = Modifier.height(12.dp))
 
-        // 3. QR Viewfinder Box
         Box(
             modifier = Modifier.size(250.dp),
             contentAlignment = Alignment.Center
         ) {
-            // Drawn Corner Brackets
             Canvas(modifier = Modifier.fillMaxSize()) {
                 val strokeWidth = 6.dp.toPx()
                 val cornerLength = 36.dp.toPx()
                 val radius = 16.dp.toPx()
 
-                // Top-Left Corner
                 drawPath(
                     path = Path().apply {
                         moveTo(0f, cornerLength)
@@ -92,7 +89,6 @@ fun LandingScreen(
                     style = Stroke(width = strokeWidth)
                 )
 
-                // Top-Right Corner
                 drawPath(
                     path = Path().apply {
                         moveTo(size.width - cornerLength, 0f)
@@ -104,7 +100,6 @@ fun LandingScreen(
                     style = Stroke(width = strokeWidth)
                 )
 
-                // Bottom-Left Corner
                 drawPath(
                     path = Path().apply {
                         moveTo(0f, size.height - cornerLength)
@@ -116,7 +111,6 @@ fun LandingScreen(
                     style = Stroke(width = strokeWidth)
                 )
 
-                // Bottom-Right Corner
                 drawPath(
                     path = Path().apply {
                         moveTo(size.width - cornerLength, size.height)
@@ -129,7 +123,6 @@ fun LandingScreen(
                 )
             }
 
-            // QR Placeholder Vector Icon
             Icon(
                 imageVector = Icons.Default.QrCode,
                 contentDescription = null,
@@ -137,7 +130,6 @@ fun LandingScreen(
                 tint = DarkText
             )
 
-            // Horizontal Scan Line
             Box(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -153,7 +145,6 @@ fun LandingScreen(
 
         Spacer(modifier = Modifier.weight(1f))
 
-        // 4. Action Toolbar Icons
         Row(
             modifier = Modifier.fillMaxWidth(0.6f),
             horizontalArrangement = Arrangement.SpaceEvenly,
@@ -177,7 +168,6 @@ fun LandingScreen(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        // 5. Bottom CTA Button
         Button(
             onClick = onStartScan,
             modifier = Modifier

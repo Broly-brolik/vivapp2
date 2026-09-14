@@ -61,7 +61,6 @@ fun ScaffoldApp() {
     val isLandingScreen = currentRoute?.endsWith("LandingRoute") == true
     val isProductsScreen = currentRoute?.endsWith("ProductsRoute") == true
     val isSummaryScreen = currentRoute?.endsWith("SummaryRoute") == true
-
     Scaffold(
         topBar = {
             TopAppBar(
@@ -121,15 +120,17 @@ fun ScaffoldApp() {
                     var isProcessing by remember { mutableStateOf(false) }
                     ScanScreen(
                         onScanResult = { rawCode ->
-                            if (!isProcessing) {
-                                isProcessing = true
+                            scope.launch(Dispatchers.Main) {
+                                if (!isProcessing) {
+                                    isProcessing = true
 
-                                val product = viewModel.findProductByQr(rawCode)
-                                if (product != null) {
-                                    navController.navigate(ConfirmItemRoute(product.sapNumber))
-                                } else {
-                                    println("DEBUG: No product for $rawCode")
-                                    isProcessing = false
+                                    val product = viewModel.findProductByQr(rawCode)
+                                    if (product != null) {
+                                        navController.navigate(ConfirmItemRoute(product.sapNumber))
+                                    } else {
+                                        println("DEBUG: No product for $rawCode")
+                                        isProcessing = false
+                                    }
                                 }
                             }
                         },
