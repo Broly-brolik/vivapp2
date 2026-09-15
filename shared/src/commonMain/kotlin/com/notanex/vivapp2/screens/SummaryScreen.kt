@@ -16,6 +16,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.notanex.vivapp2.models.ScannedItem
+import org.jetbrains.compose.resources.stringResource
+import vivapp2.shared.generated.resources.Res
+import vivapp2.shared.generated.resources.label_category
+import vivapp2.shared.generated.resources.msg_no_items
+import vivapp2.shared.generated.resources.summary_title
 
 @Composable
 fun SummaryScreen(
@@ -59,7 +64,7 @@ fun SummaryScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Text(
-                        text = "Summary",
+                        text = stringResource(Res.string.summary_title),
                         style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Bold
                     )
@@ -71,7 +76,7 @@ fun SummaryScreen(
 
                 if (scannedItems.isEmpty()) {
                     Box(modifier = Modifier.weight(1f).fillMaxWidth(), contentAlignment = Alignment.Center) {
-                        Text("No items yet", color = Color.Gray)
+                        Text(stringResource(Res.string.msg_no_items), color = Color.Gray)
                     }
                 } else {
                     LazyColumn(
@@ -112,7 +117,7 @@ private fun ScannedItemRowCard(
         ) {
             Column(modifier = Modifier.weight(1f)) {
                 Text(text = item.name, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
-                Text(text = "Category: ${item.category}", style = MaterialTheme.typography.bodySmall)
+                Text(text = "${stringResource(Res.string.label_category)}: ${item.category}", style = MaterialTheme.typography.bodySmall)
             }
 
             Row(verticalAlignment = Alignment.CenterVertically) {

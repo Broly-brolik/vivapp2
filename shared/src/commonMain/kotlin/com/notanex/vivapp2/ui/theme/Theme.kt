@@ -7,6 +7,8 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
+@Composable
+internal expect fun SystemAppearance(isDark: Boolean, statusBarColor: Color)
 private val DarkColorScheme = darkColorScheme(
     primary = DarkPrimary,
     background = DarkBackground,
@@ -16,9 +18,6 @@ private val DarkColorScheme = darkColorScheme(
     onSurface = DarkOnSurface
 )
 
-@Composable
-internal expect fun SystemAppearance(isDark: Boolean, statusBarColor: Color)
-
 private val LightColorScheme = lightColorScheme(
     primary = Primary,
     background = Background,
@@ -27,7 +26,8 @@ private val LightColorScheme = lightColorScheme(
     onBackground = OnBackground,
     onSurface = OnSurface,
     secondary = Secondary,
-    tertiary = Tertiary
+    tertiary = Tertiary,
+    outline = Slate.copy(alpha = 0.3f)
 )
 
 @Composable

@@ -23,6 +23,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.notanex.vivapp2.models.Products
+import org.jetbrains.compose.resources.stringResource
+import vivapp2.shared.generated.resources.Res
+import vivapp2.shared.generated.resources.action_add_to_list
+import vivapp2.shared.generated.resources.action_cancel
+import vivapp2.shared.generated.resources.label_packaging
+import vivapp2.shared.generated.resources.label_unit
 
 @Composable
 fun ItemConfirmationScreen(
@@ -57,11 +63,11 @@ fun ItemConfirmationScreen(
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text = "Unité: ${product.unit}",
+                text = "${stringResource(Res.string.label_unit)}: ${product.unit}",
                 style = MaterialTheme.typography.bodyLarge
             )
             Text(
-                text = "Emballage: ${product.packaging}",
+                text = "${stringResource(Res.string.label_packaging)}: ${product.packaging}",
                 style = MaterialTheme.typography.bodyLarge,
                 textAlign = TextAlign.Center
             )
@@ -80,8 +86,8 @@ fun ItemConfirmationScreen(
                 IconButton(onClick = onIncrement) { Icon(Icons.Default.Add, "More") }
             }
 
-            Button(onClick = onConfirm) { Text("Add to List") }
-            TextButton(onClick = onCancel) { Text("Cancel") }
+            Button(onClick = onConfirm) { Text(stringResource(Res.string.action_add_to_list)) }
+            TextButton(onClick = onCancel) { Text(stringResource(Res.string.action_cancel)) }
         }
     }
 }

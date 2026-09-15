@@ -53,6 +53,7 @@ fun ScaffoldApp() {
     var showLanguageMenu by remember { mutableStateOf(false) }
 
     val scannedItemsViewModel = remember { ScannedItemsViewModel() }
+    val scannedItems by scannedItemsViewModel.scannedItems.collectAsState()
 
     LaunchedEffect(Unit) {
         viewModel.loadInventory("products_fr.json")
@@ -138,6 +139,7 @@ fun ScaffoldApp() {
                         onOpenProducts = { navController.navigate(ProductsRoute) },
                         onStartScan = { navController.navigate(ScanRoute) },
                         contentPadding = innerPadding,
+                        itemsLoggedToday = scannedItems.sumOf { it.quantity }
                     )
                 }
                 composable<ProductsRoute> {
@@ -195,7 +197,6 @@ fun ScaffoldApp() {
 
                 }
                 composable<SummaryRoute> {
-                    val scannedItems by scannedItemsViewModel.scannedItems.collectAsState()
 
                     SummaryScreen(
                         scannedItems = scannedItems,

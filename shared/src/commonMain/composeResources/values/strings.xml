@@ -1,0 +1,10 @@
+<resources>
+    <string name="label_category">Category</string>
+    <string name="label_sap">SAP</string>
+    <string name="label_unit">Unit</string>
+    <string name="label_packaging">Packaging</string>
+    <string name="summary_title">Summary</string>
+    <string name="action_add_to_list">Add to List</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="msg_no_items">No items yet</string>
+</resources>
