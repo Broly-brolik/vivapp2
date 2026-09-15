@@ -23,7 +23,18 @@ class InventoryViewModel(
 
     fun setLanguage(language: AppLanguage) {
         _currentLanguage.value = language
-        loadInventory(language.fileName) // Reload the correct JSON
+        loadInventory(language.fileName)
+    }
+
+    fun initDefaultInventory(systemLanguageCode: String) {
+        val file = when(systemLanguageCode.take(2).lowercase()) {
+            "fr" -> "products_fr.json"
+            "de" -> "products_de.json"
+            "it" -> "products_it.json"
+            "en" -> "products_en.json"
+            else -> "products_en.json"
+        }
+        loadInventory(file)
     }
     fun loadInventory(fileName: String) {
         viewModelScope.launch {

@@ -53,17 +53,12 @@ import vivapp2.shared.generated.resources.product
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ScaffoldApp() {
-    val viewModel = remember { InventoryViewModel() }
+fun ScaffoldApp(viewModel: InventoryViewModel) {
     val currentLanguage by viewModel.currentLanguage.collectAsState()
     var showLanguageMenu by remember { mutableStateOf(false) }
 
     val scannedItemsViewModel = remember { ScannedItemsViewModel() }
     val scannedItems by scannedItemsViewModel.scannedItems.collectAsState()
-
-    LaunchedEffect(Unit) {
-        viewModel.loadInventory("products_fr.json")
-    }
 
     val products by viewModel.products.collectAsState()
     val loadError by viewModel.loadError.collectAsState()

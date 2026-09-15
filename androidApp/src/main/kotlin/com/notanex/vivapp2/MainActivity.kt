@@ -4,23 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.tooling.preview.Preview
-import com.notanex.vivapp2.ui.theme.VivappTheme
+import androidx.compose.ui.platform.LocalLocale
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContent {
-            App()
+            val systemLang = LocalLocale.current.platformLocale.language
+            App(systemLanguageCode = systemLang)
         }
-    }
-}
-
-@Composable
-fun App() {
-    VivappTheme {
-        ScaffoldApp()
     }
 }
