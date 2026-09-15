@@ -28,6 +28,12 @@ import com.notanex.vivapp2.ui.theme.Ink
 import com.notanex.vivapp2.ui.theme.MonoLabel
 import com.notanex.vivapp2.ui.theme.Slate
 import com.notanex.vivapp2.ui.theme.SwissRed
+import org.jetbrains.compose.resources.stringResource
+import vivapp2.shared.generated.resources.Res
+import vivapp2.shared.generated.resources.action_start_scanning
+import vivapp2.shared.generated.resources.action_view_products
+import vivapp2.shared.generated.resources.msg_items_logged
+import vivapp2.shared.generated.resources.msg_landing
 
 @Composable
 fun LandingScreen(
@@ -59,7 +65,7 @@ fun LandingScreen(
             Spacer(Modifier.height(20.dp))
 
             Text(
-                text = "Scan an item to add it\nto today's manifest.",
+                text = stringResource(Res.string.msg_landing),
                 fontSize = 30.sp,
                 lineHeight = 36.sp,
                 fontWeight = FontWeight.Bold,
@@ -86,7 +92,7 @@ fun LandingScreen(
                 Row(verticalAlignment = Alignment.CenterVertically) {
                     Icon(Icons.Default.QrCodeScanner, contentDescription = null, tint = Color.White)
                     Spacer(Modifier.width(10.dp))
-                    Text("Start scanning", color = Color.White, fontWeight = FontWeight.SemiBold, fontSize = 17.sp)
+                    Text(stringResource(Res.string.action_start_scanning), color = Color.White, fontWeight = FontWeight.SemiBold, fontSize = 17.sp)
                 }
             }
 
@@ -99,10 +105,10 @@ fun LandingScreen(
             ) {
                 Column {
                     Text(itemsLoggedToday.toString(), style = MonoLabel.copy(fontSize = 20.sp), color = Ink)
-                    Text("items logged today", style = MaterialTheme.typography.bodySmall, color = Slate)
+                    Text(stringResource(Res.string.msg_items_logged), style = MaterialTheme.typography.bodySmall, color = Slate)
                 }
                 TextButton(onClick = onOpenProducts) {
-                    Text("View manifest", color = Slate)
+                    Text(stringResource(Res.string.action_view_products), color = Slate)
                 }
             }
 

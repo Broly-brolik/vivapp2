@@ -25,7 +25,6 @@ fun ProductsScreen(
         color = MaterialTheme.colorScheme.background
     ) {
         if (loadError != null) {
-            // Use the padding here too
             Text(
                 text = loadError,
                 color = Color.Red,
@@ -39,7 +38,7 @@ fun ProductsScreen(
                 items(products) { product ->
                     Text(
                         text = "${product.sapNumber} | ${product.name} | ${product.packaging}",
-                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp) // 2. Add some side padding
+                        modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)
                     )
                 }
             }

@@ -44,6 +44,12 @@ import com.notanex.vivapp2.viewmodels.InventoryViewModel
 import com.notanex.vivapp2.viewmodels.ScannedItemsViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.stringResource
+import vivapp2.shared.generated.resources.Res
+import vivapp2.shared.generated.resources.email_body
+import vivapp2.shared.generated.resources.email_subject
+import vivapp2.shared.generated.resources.history
+import vivapp2.shared.generated.resources.product
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -76,8 +82,8 @@ fun ScaffoldApp() {
                 title = {
                     Text(
                         when {
-                            isProductsScreen -> "Products"
-                            isSummaryScreen -> "Scanning History"
+                            isProductsScreen -> stringResource(Res.string.product)
+                            isSummaryScreen -> stringResource(Res.string.history)
                             else -> "Vivapp"
                         }
                     )
@@ -117,12 +123,6 @@ fun ScaffoldApp() {
                     if (isSummaryScreen || isLandingScreen) {
                         IconButton(onClick = { navController.navigate(ScanRoute) }) {
                             Icon(Icons.Default.QrCodeScanner, contentDescription = "Scan another")
-                        }
-                    }
-
-                    if (!isProductsScreen) {
-                        IconButton(onClick = { navController.navigate(ProductsRoute) }) {
-                            Icon(Icons.AutoMirrored.Filled.List, contentDescription = "Show products")
                         }
                     }
                 }
@@ -197,6 +197,8 @@ fun ScaffoldApp() {
 
                 }
                 composable<SummaryRoute> {
+                    val emailSubject = stringResource(Res.string.email_subject, scannedItems.size)
+                    val emailBody = stringResource(Res.string.email_body)
 
                     SummaryScreen(
                         scannedItems = scannedItems,
@@ -208,8 +210,8 @@ fun ScaffoldApp() {
                             val csvContent = scannedItemsViewModel.buildCsvSummary()
 
                             sendEmailWithAttachment(
-                                subject = "Scanned ${scannedItems.size} items",
-                                body = "CSV summary of the current session.",
+                                subject = emailSubject,
+                                body = emailBody,
                                 attachment = EmailAttachment(
                                     fileName = "inventory_summary.csv",
                                     content = csvContent

@@ -7,4 +7,12 @@
     <string name="action_add_to_list">Ajouter à la liste</string>
     <string name="action_cancel">Annuler</string>
     <string name="msg_no_items">Aucun article pour le moment</string>
+    <string name="product">Articles</string>
+    <string name="history">Historique</string>
+    <string name="email_subject">Vivapp - %d articles scannés</string>
+    <string name="email_body">Résumé CSV de la session actuelle.</string>
+    <string name="msg_landing">Scannez les codes QR des articles.</string>
+    <string name="action_start_scanning">Démarrer le scan</string>
+    <string name="msg_items_logged">articles enregistrés aujourd'hui</string>
+    <string name="action_view_products">Voir tous les articles</string>
 </resources>
