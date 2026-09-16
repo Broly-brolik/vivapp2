@@ -1,8 +1,16 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.text.SimpleDateFormat
+import java.util.Date
 
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeCompiler)
+}
+
+val autoVersionCode: Int = SimpleDateFormat("yyMMdd").format(Date()).toInt()
+val currentVersionName = "1.0.0"
+base {
+    archivesName.set("vivapp-v${currentVersionName}-${autoVersionCode}")
 }
 
 kotlin {
@@ -27,8 +35,8 @@ android {
         applicationId = "com.notanex.vivapp2"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = autoVersionCode
+        versionName = currentVersionName
     }
     packaging {
         resources {
