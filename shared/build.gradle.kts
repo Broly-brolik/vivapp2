@@ -16,6 +16,7 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+            binaryOption("bundleId", "com.notanex.vivapp2.shared")
         }
     }
     
