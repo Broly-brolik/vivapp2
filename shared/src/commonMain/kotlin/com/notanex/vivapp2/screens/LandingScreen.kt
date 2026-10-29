@@ -1,8 +1,11 @@
 package com.notanex.vivapp2.screens
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material3.Surface
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -24,13 +27,13 @@ import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.notanex.vivapp2.ui.theme.Ink
 import com.notanex.vivapp2.ui.theme.MonoLabel
-import com.notanex.vivapp2.ui.theme.Slate
 import com.notanex.vivapp2.ui.theme.SwissRed
+import com.notanex.vivapp2.ui.theme.SwissRedDeep
 import org.jetbrains.compose.resources.stringResource
 import vivapp2.shared.generated.resources.Res
 import vivapp2.shared.generated.resources.action_start_scanning
+import vivapp2.shared.generated.resources.action_view_list
 import vivapp2.shared.generated.resources.action_view_products
 import vivapp2.shared.generated.resources.msg_items_logged
 import vivapp2.shared.generated.resources.msg_landing
@@ -39,6 +42,7 @@ import vivapp2.shared.generated.resources.msg_landing
 fun LandingScreen(
     onOpenProducts: () -> Unit,
     onStartScan: () -> Unit,
+    onOpenSummary: () -> Unit,
     contentPadding: PaddingValues,
     itemsLoggedToday: Int = 0,
 ) {
@@ -58,7 +62,7 @@ fun LandingScreen(
                 Text(
                     "Vivapp",
                     style = MaterialTheme.typography.labelLarge,
-                    color = Slate
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
 
@@ -69,7 +73,7 @@ fun LandingScreen(
                 fontSize = 30.sp,
                 lineHeight = 36.sp,
                 fontWeight = FontWeight.Bold,
-                color = Ink
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(Modifier.weight(1f))
@@ -85,7 +89,7 @@ fun LandingScreen(
                         spotColor = SwissRed.copy(alpha = 0.45f)
                     )
                     .clip(RoundedCornerShape(14.dp))
-                    .background(Brush.linearGradient(listOf(SwissRed, Color(0xFFA31D14))))
+                    .background(Brush.linearGradient(listOf(SwissRed, SwissRedDeep)))
                     .clickable(onClick = onStartScan),
                 contentAlignment = Alignment.Center
             ) {
@@ -96,23 +100,52 @@ fun LandingScreen(
                 }
             }
 
-            Spacer(Modifier.height(20.dp))
+            Spacer(Modifier.height(16.dp))
 
-            Row(
+            Surface(
+                onClick = onOpenSummary,
                 modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
+                shape = RoundedCornerShape(14.dp),
+                color = MaterialTheme.colorScheme.surface,
+                border = BorderStroke(1.dp, MaterialTheme.colorScheme.outlineVariant)
             ) {
-                Column {
-                    Text(itemsLoggedToday.toString(), style = MonoLabel.copy(fontSize = 20.sp), color = Ink)
-                    Text(stringResource(Res.string.msg_items_logged), style = MaterialTheme.typography.bodySmall, color = Slate)
-                }
-                TextButton(onClick = onOpenProducts) {
-                    Text(stringResource(Res.string.action_view_products), color = Slate)
+                Row(
+                    modifier = Modifier.padding(horizontal = 16.dp, vertical = 14.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(
+                            itemsLoggedToday.toString(),
+                            style = MonoLabel.copy(fontSize = 22.sp),
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+                        Text(
+                            stringResource(Res.string.msg_items_logged),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                    Text(
+                        stringResource(Res.string.action_view_list),
+                        style = MaterialTheme.typography.labelLarge,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+                    Icon(
+                        Icons.AutoMirrored.Filled.KeyboardArrowRight,
+                        contentDescription = null,
+                        tint = MaterialTheme.colorScheme.primary
+                    )
                 }
             }
 
-            Spacer(Modifier.height(32.dp))
+            TextButton(
+                onClick = onOpenProducts,
+                modifier = Modifier.fillMaxWidth().padding(top = 4.dp)
+            ) {
+                Text(stringResource(Res.string.action_view_products), color = MaterialTheme.colorScheme.onSurfaceVariant)
+            }
+
+            Spacer(Modifier.height(24.dp))
         }
     }
 }
@@ -131,8 +164,9 @@ private fun SwissCrossMark(size: androidx.compose.ui.unit.Dp = 18.dp) {
 
 @Composable
 private fun TopoBackground(modifier: Modifier = Modifier) {
+    val lineTint = MaterialTheme.colorScheme.onSurfaceVariant
     Canvas(modifier = modifier) {
-        val lineColor = Slate.copy(alpha = 0.10f)
+        val lineColor = lineTint.copy(alpha = 0.10f)
         val rows = 7
         val rowHeight = size.height / rows
         repeat(rows) { i ->

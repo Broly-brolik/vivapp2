@@ -70,6 +70,14 @@ class ScannedItemsViewModel : ViewModel() {
         }
     }
 
+    fun restoreItem(item: ScannedItem, index: Int) {
+        viewModelScope.launch {
+            val current = _scannedItems.value.filterNot { it.sapNumber == item.sapNumber }.toMutableList()
+            current.add(index.coerceIn(0, current.size), item)
+            _scannedItems.value = current
+        }
+    }
+
     fun clearAll() {
         viewModelScope.launch {
             _scannedItems.value = emptyList()

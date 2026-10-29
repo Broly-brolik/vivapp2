@@ -11,11 +11,24 @@ import androidx.compose.ui.graphics.Color
 internal expect fun SystemAppearance(isDark: Boolean, statusBarColor: Color)
 private val DarkColorScheme = darkColorScheme(
     primary = DarkPrimary,
+    onPrimary = OnPrimary,
+    primaryContainer = DarkPrimaryContainer,
+    onPrimaryContainer = DarkOnPrimaryContainer,
+    inversePrimary = SwissRed,
+    secondary = DarkOnSurfaceVariant,
+    secondaryContainer = DarkSurfaceVariant,
+    onSecondaryContainer = DarkOnSurface,
+    tertiary = DarkSurfaceVariant,
     background = DarkBackground,
     surface = DarkSurface,
-    onPrimary = OnPrimary,
+    surfaceVariant = DarkSurfaceVariant,
+    surfaceContainer = DarkSurface,
+    surfaceContainerHigh = DarkSurfaceVariant,
     onBackground = DarkOnSurface,
-    onSurface = DarkOnSurface
+    onSurface = DarkOnSurface,
+    onSurfaceVariant = DarkOnSurfaceVariant,
+    outline = DarkOnSurfaceVariant.copy(alpha = 0.4f),
+    outlineVariant = DarkOnSurfaceVariant.copy(alpha = 0.2f)
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -25,9 +38,19 @@ private val LightColorScheme = lightColorScheme(
     onPrimary = OnPrimary,
     onBackground = OnBackground,
     onSurface = OnSurface,
+    primaryContainer = PrimaryContainer,
+    onPrimaryContainer = OnPrimaryContainer,
+    inversePrimary = InversePrimary,
     secondary = Secondary,
+    secondaryContainer = SurfaceVariant,
+    onSecondaryContainer = Ink,
     tertiary = Tertiary,
-    outline = Slate.copy(alpha = 0.3f)
+    surfaceVariant = SurfaceVariant,
+    surfaceContainer = Surface,
+    surfaceContainerHigh = SurfaceVariant,
+    onSurfaceVariant = OnSurfaceVariant,
+    outline = Slate.copy(alpha = 0.3f),
+    outlineVariant = Slate.copy(alpha = 0.15f)
 )
 
 @Composable
