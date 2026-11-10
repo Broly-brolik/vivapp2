@@ -13,6 +13,7 @@ Entwickelt für Küchenchefs, Fouriere, Logistikpersonal und Cateringteams, die 
 • CSV-Export – Liste per E-Mail, Messenger oder Cloud an die Logistik senden
 • Offline nutzbar – der Produktkatalog ist auf dem Gerät gespeichert, kein Internet für die Inventur nötig
 • Vier Sprachen – Deutsch, Français, Italiano, English
+• Geführte Einführung und Hilfe & FAQ in der App – in unter einer Minute startklar
 
 ★ WARUM VIVAPP?
 

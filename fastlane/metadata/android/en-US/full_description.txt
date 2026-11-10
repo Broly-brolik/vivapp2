@@ -13,6 +13,7 @@ Built for kitchen managers, quartermasters, logistics staff and catering teams w
 • CSV export – share the list by e-mail, messaging apps or cloud storage for supply chain processing
 • Works offline – the product catalogue is stored on the device, no internet needed to count stock
 • Four languages – English, Deutsch, Français, Italiano
+• Guided walkthrough and in-app Help & FAQ – get started in under a minute
 
 ★ WHY VIVAPP?
 

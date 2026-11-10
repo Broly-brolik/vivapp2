@@ -16,3 +16,9 @@ data class ConfirmItemRoute(val sapNumber: String)
 
 @Serializable
 data object SummaryRoute
+
+@Serializable
+data object OnboardingRoute
+
+@Serializable
+data object HelpRoute

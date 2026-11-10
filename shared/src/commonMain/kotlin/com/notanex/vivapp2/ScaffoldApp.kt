@@ -6,6 +6,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material.icons.automirrored.filled.HelpOutline
 import androidx.compose.material.icons.filled.Language
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.material.icons.filled.Share
@@ -42,14 +43,18 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.notanex.vivapp2.logic.AppLinks
+import com.notanex.vivapp2.logic.AppPreferences
+import com.notanex.vivapp2.logic.PrefKeys
 import com.notanex.vivapp2.logic.EmailAttachment
 import com.notanex.vivapp2.logic.canOpenStoreListing
 import com.notanex.vivapp2.logic.openStoreListing
 import com.notanex.vivapp2.logic.shareText
 import com.notanex.vivapp2.logic.sendEmailWithAttachment
 import com.notanex.vivapp2.models.AppLanguage
+import com.notanex.vivapp2.screens.HelpScreen
 import com.notanex.vivapp2.screens.ItemConfirmationScreen
 import com.notanex.vivapp2.screens.LandingScreen
+import com.notanex.vivapp2.screens.OnboardingScreen
 import com.notanex.vivapp2.screens.ProductsScreen
 import com.notanex.vivapp2.screens.ScanScreen
 import com.notanex.vivapp2.screens.SummaryScreen
@@ -61,6 +66,7 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import vivapp2.shared.generated.resources.Res
+import vivapp2.shared.generated.resources.action_help
 import vivapp2.shared.generated.resources.action_rate_app
 import vivapp2.shared.generated.resources.action_send_csv
 import vivapp2.shared.generated.resources.action_share_app
@@ -78,6 +84,7 @@ import vivapp2.shared.generated.resources.product
 import vivapp2.shared.generated.resources.share_app_subject
 import vivapp2.shared.generated.resources.share_app_text
 import vivapp2.shared.generated.resources.title_confirm
+import vivapp2.shared.generated.resources.title_help
 import vivapp2.shared.generated.resources.title_scan
 
 /** How long the "code not recognised" banner stays up; repeats of the same code are ignored meanwhile. */
@@ -108,6 +115,12 @@ fun ScaffoldApp(viewModel: InventoryViewModel) {
     val isSummaryScreen = currentRoute?.endsWith("SummaryRoute") == true
     val isScanScreen = currentRoute?.endsWith("ScanRoute") == true
     val isConfirmScreen = currentRoute?.contains("ConfirmItemRoute") == true
+    val isHelpScreen = currentRoute?.endsWith("HelpRoute") == true
+    val isOnboardingScreen = currentRoute?.endsWith("OnboardingRoute") == true
+    // Read once per launch: first-time users start with the walkthrough.
+    val startDestination: Any = remember {
+        if (AppPreferences.getBoolean(PrefKeys.ONBOARDING_DONE)) LandingRoute else OnboardingRoute
+    }
 
     val emailSubject = stringResource(Res.string.email_subject, scannedItems.size)
     val emailBody = stringResource(Res.string.email_body)
@@ -117,7 +130,7 @@ fun ScaffoldApp(viewModel: InventoryViewModel) {
 
     Scaffold(
         topBar = {
-            TopAppBar(
+            if (!isOnboardingScreen) TopAppBar(
                 title = {
                     Text(
                         when {
@@ -125,6 +138,7 @@ fun ScaffoldApp(viewModel: InventoryViewModel) {
                             isSummaryScreen -> stringResource(Res.string.history)
                             isScanScreen -> stringResource(Res.string.title_scan)
                             isConfirmScreen -> stringResource(Res.string.title_confirm)
+                            isHelpScreen -> stringResource(Res.string.title_help)
                             else -> ""
                         }
                     )
@@ -182,6 +196,14 @@ fun ScaffoldApp(viewModel: InventoryViewModel) {
                                     shareText(text = shareAppText, subject = shareAppSubject, chooserTitle = shareAppTitle)
                                 }
                             )
+                            DropdownMenuItem(
+                                text = { Text(stringResource(Res.string.action_help)) },
+                                leadingIcon = { Icon(Icons.AutoMirrored.Filled.HelpOutline, contentDescription = null) },
+                                onClick = {
+                                    showMoreMenu = false
+                                    if (!isHelpScreen) navController.navigate(HelpRoute)
+                                }
+                            )
                             if (canOpenStoreListing) {
                                 DropdownMenuItem(
                                     text = { Text(stringResource(Res.string.action_rate_app)) },
@@ -224,9 +246,30 @@ fun ScaffoldApp(viewModel: InventoryViewModel) {
     ) { innerPadding ->
             NavHost(
                 navController = navController,
-                startDestination = LandingRoute,
+                startDestination = startDestination,
                 modifier = Modifier.fillMaxSize()
             ) {
+                composable<OnboardingRoute> {
+                    OnboardingScreen(
+                        onFinish = {
+                            AppPreferences.putBoolean(PrefKeys.ONBOARDING_DONE, true)
+                            if (navController.previousBackStackEntry != null) {
+                                // Replayed from Help: just go back.
+                                navController.popBackStack()
+                            } else {
+                                navController.navigate(LandingRoute) {
+                                    popUpTo(OnboardingRoute) { inclusive = true }
+                                }
+                            }
+                        }
+                    )
+                }
+                composable<HelpRoute> {
+                    HelpScreen(
+                        onReplayTutorial = { navController.navigate(OnboardingRoute) },
+                        contentPadding = innerPadding
+                    )
+                }
                 composable<LandingRoute> {
                     LandingScreen(
                         onOpenProducts = { navController.navigate(ProductsRoute) },
