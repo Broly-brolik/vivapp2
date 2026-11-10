@@ -43,4 +43,9 @@
     <string name="cd_remove">Entfernen</string>
     <string name="cd_back">Zurück</string>
     <string name="cd_change_language">Sprache ändern</string>
+    <string name="cd_more_options">Weitere Optionen</string>
+    <string name="action_share_app">Vivapp teilen</string>
+    <string name="action_rate_app">Bewerten &amp; Feedback geben</string>
+    <string name="share_app_subject">Vivapp – Inventar für die Feldküche</string>
+    <string name="share_app_text">Ich erfasse Verpflegung in der Feldküche mit Vivapp: QR-Codes scannen und die Liste als CSV senden. Hier herunterladen: %1$s</string>
 </resources>

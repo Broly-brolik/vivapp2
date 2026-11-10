@@ -43,4 +43,9 @@
     <string name="cd_remove">Supprimer</string>
     <string name="cd_back">Retour</string>
     <string name="cd_change_language">Changer de langue</string>
+    <string name="cd_more_options">Plus d\'options</string>
+    <string name="action_share_app">Partager Vivapp</string>
+    <string name="action_rate_app">Noter &amp; donner son avis</string>
+    <string name="share_app_subject">Vivapp – inventaire de cuisine de campagne</string>
+    <string name="share_app_text">J\'utilise Vivapp pour saisir les subsistances de la cuisine de campagne : scanner les codes QR et envoyer la liste en CSV. À télécharger ici : %1$s</string>
 </resources>

@@ -44,4 +44,9 @@
     <string name="cd_remove">Remove</string>
     <string name="cd_back">Back</string>
     <string name="cd_change_language">Change language</string>
+    <string name="cd_more_options">More options</string>
+    <string name="action_share_app">Share Vivapp</string>
+    <string name="action_rate_app">Rate &amp; give feedback</string>
+    <string name="share_app_subject">Vivapp – field kitchen inventory</string>
+    <string name="share_app_text">I use Vivapp to log field kitchen provisions by scanning QR codes and sending the list as CSV. Get it here: %1$s</string>
 </resources>

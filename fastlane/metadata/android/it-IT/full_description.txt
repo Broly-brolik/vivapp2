@@ -1,0 +1,32 @@
+Vivapp è un'app di inventario veloce e offline per cucine da campo, sussistenza militare e ristorazione collettiva. Sostituisci le liste cartacee con la scansione di codici QR e invia una lista delle scorte in CSV in pochi secondi.
+
+Pensata per capocuochi, furieri, personale logistico e team di catering che devono contare viveri e materiale di cucina in modo rapido e senza errori – anche senza rete.
+
+★ FUNZIONI
+
+• Scanner di codici QR – inquadra l'etichetta e l'articolo viene riconosciuto subito
+• Scansione da foto – leggi un codice QR da un'immagine della galleria
+• Torcia integrata – scansiona in magazzini bui, tende e celle frigorifere
+• Catalogo prodotti – cerca per nome, numero SAP o categoria e aggiungi senza scansione
+• Gestione quantità – regola con +/– e vedi cosa è già nella lista
+• Lista d'inventario – controlla, correggi, annulla o svuota il conteggio in qualsiasi momento
+• Export CSV – condividi la lista via e-mail, app di messaggistica o cloud per la logistica
+• Funziona offline – il catalogo è salvato sul dispositivo, non serve internet
+• Quattro lingue – Italiano, Deutsch, Français, English
+
+★ PERCHÉ VIVAPP?
+
+• Molto meno tempo per l'inventario rispetto alle liste cartacee
+• Niente errori di battitura su numeri SAP e quantità
+• Un flusso semplice: scansiona → conferma la quantità → invia il CSV
+• Design chiaro e moderno, facile da usare sotto pressione
+
+★ IDEALE PER
+
+• Cucine da campo e cucine mobili
+• Logistica militare e gestione dei viveri
+• Servizi di emergenza e protezione civile
+• Catering, mense e cucine per eventi
+• Chiunque cerchi un'app semplice per l'inventario alimentare e la gestione delle scorte
+
+Vivapp è open source e non raccoglie dati personali. Avvia il tuo prossimo inventario in pochi secondi.

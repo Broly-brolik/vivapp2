@@ -1,0 +1,32 @@
+Vivapp is a fast, offline inventory app for field kitchens, military catering and large-scale food service. Replace paper tally sheets with QR code scanning and send a clean CSV stock list in seconds.
+
+Built for kitchen managers, quartermasters, logistics staff and catering teams who need to count food provisions and kitchen supplies quickly and without errors – even far from any network.
+
+★ KEY FEATURES
+
+• QR code scanner – point the camera at a product label and the item is recognised instantly
+• Scan from photo – read a QR code from an image in your gallery
+• Built-in flashlight – scan in dark storerooms, tents and cold stores
+• Product catalogue – search by name, SAP number or category and add items without scanning
+• Quantity control – adjust counts with +/– and see what is already on your list
+• Inventory list – review, correct, undo or clear your stock count at any time
+• CSV export – share the list by e-mail, messaging apps or cloud storage for supply chain processing
+• Works offline – the product catalogue is stored on the device, no internet needed to count stock
+• Four languages – English, Deutsch, Français, Italiano
+
+★ WHY VIVAPP?
+
+• Cut inventory and stock-taking time compared with paper lists
+• Avoid typos in SAP numbers and quantities
+• One simple workflow: scan → confirm quantity → send CSV
+• Clean, modern design that is easy to use with gloves and under time pressure
+
+★ IDEAL FOR
+
+• Field kitchens and mobile kitchens
+• Military logistics and ration / provision management
+• Emergency response and civil protection units
+• Catering companies, canteens and event kitchens
+• Anyone who needs a simple food inventory and stock counting tool
+
+Vivapp is open source and collects no personal data. Start your next stock count in seconds.

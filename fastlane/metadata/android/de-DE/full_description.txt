@@ -1,0 +1,32 @@
+Vivapp ist eine schnelle Offline-Inventur-App für Feldküchen, Truppenverpflegung und Grossküchen. Ersetzen Sie Strichlisten auf Papier durch QR-Code-Scannen und versenden Sie in Sekunden eine saubere CSV-Bestandsliste.
+
+Entwickelt für Küchenchefs, Fouriere, Logistikpersonal und Cateringteams, die Verpflegung und Küchenmaterial schnell und fehlerfrei zählen müssen – auch ohne Netzempfang.
+
+★ FUNKTIONEN
+
+• QR-Code-Scanner – Kamera auf das Etikett richten, der Artikel wird sofort erkannt
+• Aus Foto scannen – QR-Code aus einem Bild in der Galerie lesen
+• Integrierte Taschenlampe – scannen in dunklen Lagern, Zelten und Kühlräumen
+• Produktkatalog – Suche nach Name, SAP-Nummer oder Kategorie, Artikel auch ohne Scan hinzufügen
+• Mengensteuerung – Mengen mit +/– anpassen und sehen, was bereits auf der Liste steht
+• Inventarliste – Bestandsaufnahme jederzeit prüfen, korrigieren, rückgängig machen oder leeren
+• CSV-Export – Liste per E-Mail, Messenger oder Cloud an die Logistik senden
+• Offline nutzbar – der Produktkatalog ist auf dem Gerät gespeichert, kein Internet für die Inventur nötig
+• Vier Sprachen – Deutsch, Français, Italiano, English
+
+★ WARUM VIVAPP?
+
+• Deutlich weniger Zeit für Inventur und Bestandsaufnahme als mit Papierlisten
+• Keine Tippfehler bei SAP-Nummern und Mengen
+• Ein einfacher Ablauf: scannen → Menge bestätigen → CSV senden
+• Klares, modernes Design – auch unter Zeitdruck einfach zu bedienen
+
+★ IDEAL FÜR
+
+• Feldküchen und mobile Küchen
+• Militärische Logistik und Verpflegungsplanung
+• Rettungsdienste, Zivilschutz und Katastrophenhilfe
+• Caterer, Kantinen und Eventküchen
+• Alle, die eine einfache Lebensmittel-Inventur- und Lagerbestands-App suchen
+
+Vivapp ist Open Source und sammelt keine persönlichen Daten. Starten Sie Ihre nächste Inventur in Sekunden.

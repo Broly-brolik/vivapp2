@@ -1,0 +1,1 @@
+Verpflegung & Küchenvorrat per QR-Code erfassen. Offline, mit CSV-Export.

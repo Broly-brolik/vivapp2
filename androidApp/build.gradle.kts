@@ -8,7 +8,7 @@ plugins {
 }
 
 val autoVersionCode: Int = SimpleDateFormat("yyMMdd").format(Date()).toInt()
-val currentVersionName = "1.0.0"
+val currentVersionName = "1.1.0"
 base {
     archivesName.set("vivapp-v${currentVersionName}-${autoVersionCode}")
 }

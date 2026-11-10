@@ -1,0 +1,1 @@
+Scannez les codes QR pour inventorier subsistances et stock. Hors ligne, CSV.

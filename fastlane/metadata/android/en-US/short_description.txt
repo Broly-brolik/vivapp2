@@ -1,0 +1,1 @@
+Scan QR codes to count food provisions & kitchen stock. Offline, CSV export.

@@ -7,6 +7,9 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Language
+import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.Share
+import androidx.compose.material.icons.filled.StarRate
 import androidx.compose.material.icons.filled.QrCodeScanner
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -38,7 +41,11 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.notanex.vivapp2.logic.AppLinks
 import com.notanex.vivapp2.logic.EmailAttachment
+import com.notanex.vivapp2.logic.canOpenStoreListing
+import com.notanex.vivapp2.logic.openStoreListing
+import com.notanex.vivapp2.logic.shareText
 import com.notanex.vivapp2.logic.sendEmailWithAttachment
 import com.notanex.vivapp2.models.AppLanguage
 import com.notanex.vivapp2.screens.ItemConfirmationScreen
@@ -54,17 +61,22 @@ import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.stringResource
 import vivapp2.shared.generated.resources.Res
+import vivapp2.shared.generated.resources.action_rate_app
 import vivapp2.shared.generated.resources.action_send_csv
+import vivapp2.shared.generated.resources.action_share_app
 import vivapp2.shared.generated.resources.action_start_scanning
 import vivapp2.shared.generated.resources.action_undo
 import vivapp2.shared.generated.resources.cd_back
 import vivapp2.shared.generated.resources.cd_change_language
+import vivapp2.shared.generated.resources.cd_more_options
 import vivapp2.shared.generated.resources.email_body
 import vivapp2.shared.generated.resources.email_subject
 import vivapp2.shared.generated.resources.history
 import vivapp2.shared.generated.resources.msg_added
 import vivapp2.shared.generated.resources.msg_removed
 import vivapp2.shared.generated.resources.product
+import vivapp2.shared.generated.resources.share_app_subject
+import vivapp2.shared.generated.resources.share_app_text
 import vivapp2.shared.generated.resources.title_confirm
 import vivapp2.shared.generated.resources.title_scan
 
@@ -76,6 +88,7 @@ private const val UNKNOWN_CODE_BANNER_MS = 2500L
 fun ScaffoldApp(viewModel: InventoryViewModel) {
     val currentLanguage by viewModel.currentLanguage.collectAsState()
     var showLanguageMenu by remember { mutableStateOf(false) }
+    var showMoreMenu by remember { mutableStateOf(false) }
 
     val scannedItemsViewModel = remember { ScannedItemsViewModel() }
     val scannedItems by scannedItemsViewModel.scannedItems.collectAsState()
@@ -98,6 +111,9 @@ fun ScaffoldApp(viewModel: InventoryViewModel) {
 
     val emailSubject = stringResource(Res.string.email_subject, scannedItems.size)
     val emailBody = stringResource(Res.string.email_body)
+    val shareAppTitle = stringResource(Res.string.action_share_app)
+    val shareAppSubject = stringResource(Res.string.share_app_subject)
+    val shareAppText = stringResource(Res.string.share_app_text, AppLinks.PLAY_STORE_URL)
 
     Scaffold(
         topBar = {
@@ -145,6 +161,34 @@ fun ScaffoldApp(viewModel: InventoryViewModel) {
                                         if (currentLanguage == lang) {
                                             Icon(Icons.Default.Check, contentDescription = null)
                                         }
+                                    }
+                                )
+                            }
+                        }
+                    }
+                    Box {
+                        IconButton(onClick = { showMoreMenu = true }) {
+                            Icon(Icons.Default.MoreVert, contentDescription = stringResource(Res.string.cd_more_options))
+                        }
+                        DropdownMenu(
+                            expanded = showMoreMenu,
+                            onDismissRequest = { showMoreMenu = false }
+                        ) {
+                            DropdownMenuItem(
+                                text = { Text(shareAppTitle) },
+                                leadingIcon = { Icon(Icons.Default.Share, contentDescription = null) },
+                                onClick = {
+                                    showMoreMenu = false
+                                    shareText(text = shareAppText, subject = shareAppSubject, chooserTitle = shareAppTitle)
+                                }
+                            )
+                            if (canOpenStoreListing) {
+                                DropdownMenuItem(
+                                    text = { Text(stringResource(Res.string.action_rate_app)) },
+                                    leadingIcon = { Icon(Icons.Default.StarRate, contentDescription = null) },
+                                    onClick = {
+                                        showMoreMenu = false
+                                        openStoreListing()
                                     }
                                 )
                             }
