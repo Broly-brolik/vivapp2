@@ -1,0 +1,1 @@
+inventory,stock,QR,scanner,food,provisions,catering,military,CSV,offline,quartermaster,SAP,canteen
