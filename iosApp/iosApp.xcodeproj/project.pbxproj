@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		52D61305D3EAD2FFE5F02018 /* Vivapp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vivapp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D61305D3EAD2FFE5F02018 /* Vivapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vivapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -59,7 +59,7 @@
 		49FE8EA3015EB5087FA2539C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				52D61305D3EAD2FFE5F02018 /* Vivapp2.app */,
+				52D61305D3EAD2FFE5F02018 /* Vivapp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 			packageProductDependencies = (
 			);
 			productName = iosApp;
-			productReference = 52D61305D3EAD2FFE5F02018 /* Vivapp2.app */;
+			productReference = 52D61305D3EAD2FFE5F02018 /* Vivapp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
